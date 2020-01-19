@@ -3,9 +3,11 @@
 * {
   box-sizing: border-box;
 }
+
 .img-align {
 margin-top: 8px;
 }
+
 .container2 {
   position: relative;
   width: 50%;
