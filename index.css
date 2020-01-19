@@ -81,8 +81,8 @@ img {vertical-align: middle;}
 .image {
   opacity: 1;
   display: block;
-  width: 100%;
-  height: auto;
+  height: 330px;
+  width: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
