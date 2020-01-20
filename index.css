@@ -12,6 +12,15 @@ img {vertical-align: middle;}
   margin: auto;
 }
 
+.vl {
+  border-left: 1px solid gray;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 1000px;
+}
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
