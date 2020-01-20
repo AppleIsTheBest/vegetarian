@@ -225,7 +225,7 @@ a.navlink:hover {
 .button, input[type="submit"]{
 	padding: 14px;
 	background-color: transparent;
-	color: white;
+	color: black;
 	border: 0;
 	text-decoration: none;
 	position: relative;
