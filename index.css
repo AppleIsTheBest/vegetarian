@@ -75,14 +75,14 @@ img {vertical-align: middle;}
 
 .container- {
   position: relative;
-  width: 100%;
+  width: 50%;
 }
 
 .image {
   opacity: 1;
   display: block;
-  height: 330px;
-  width: auto;
+  width: 100%;
+  height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
