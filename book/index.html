@@ -34,7 +34,7 @@
     <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/resources/Feedback.html">Feedback</a>
   </nav>
       <h1 class="tc">Order Now</h1>
-    <?php
+    <form action="action.php" method="post">
         <!-- Currently not working. 405 Error. Not sure how to fix. -->
     <article class="c form">
     <script>
@@ -58,7 +58,7 @@
     <div class="flex-container">
         <div class="label-input-container tworow">
             <label class="RegularWhiteText">First Name</label>
-            <input class="" name="Fname" type="text" id="require" required><?php echo $Fname;?><br>
+            <input class="" name="First name" type="text" id="require" required><br>
         </div>
         <div class="label-input-container tworow">
             <label class="RegularWhiteText">Last Name</label>
@@ -118,12 +118,8 @@
         <label class="RegularWhiteText">I agree to all of the <a href="/atem/Dilemma Escape Rooms Terms and Conditions.pdf" target="_blank">terms and conditions</a> and I am above the age of 18.
         <input type="checkbox" required>
     </div>
-    <button class="button mt32" type="Submit">Order Now</button>
+    <button class="button mt32">Order Now</button>
     </article>
-?>
-<?php
-echo "<h2>Here's what we have from you:</h2>";
-echo "Name:" $Fname;
-?>
+</form>
 </body>
 </html>
