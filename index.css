@@ -20,6 +20,9 @@ img {vertical-align: middle;}
   margin-left: -3px;
   top: 1600px;
 }
+.img- {
+left: 50%;
+}
 
 .prev, .next {
   cursor: pointer;
