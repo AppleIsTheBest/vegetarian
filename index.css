@@ -13,7 +13,7 @@ img {vertical-align: middle;}
 }
 
 .vl {
-  border-left: 1px solid gray;
+  border-left: 1px solid #F4F4F4;
   height: 500px;
   position: absolute;
   left: 50%;
