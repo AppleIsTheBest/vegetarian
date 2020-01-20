@@ -2,21 +2,3 @@
    width: 50%;
    height: 50px;
 }
-a:link {
-  color: white;
-}
-
-
-a:visited {
-  color: grey;
-}
-
-
-a:hover {
-  color: grey;
-}
-
-
-a:active {
-  color: blue;
-}
