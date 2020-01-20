@@ -263,7 +263,9 @@ input[type=submit]:hover {
 
 
 }    
-
+.RegularWhiteText{
+    color: #ffffff;
+}    
 
 </style>
 
@@ -309,22 +311,10 @@ input[type=submit]:hover {
             <div class="threerow label-input-container">
 
 
-                <label for="fname">Full  Name</label>
+                <label for="fname" class="RegularWhiteText">Full  Name</label>
 
 
-                <input class="select" type="text" id="fname" name="firstname" placeholder="Your name...">
-
-
-            </div>
-
-
-            <div class="threerow label-input-container">
-
-
-                <label for="email">Email</label>
-
-
-                <input class="select" type="text" id="lname" name="lastname" placeholder="Email">
+                <input class="select" type="text" id="fname" name="firstname" placeholder="">
 
 
             </div>
@@ -333,10 +323,22 @@ input[type=submit]:hover {
             <div class="threerow label-input-container">
 
 
-                <label for="phone">Phone</label>
+                <label for="email" class="RegularWhiteText">Email</label>
 
 
-                <input class="select" type="text" id="lname" name="lastname" placeholder="Phone Number">
+                <input class="select" type="text" id="lname" name="lastname" placeholder="">
+
+
+            </div>
+
+
+            <div class="threerow label-input-container">
+
+
+                <label for="phone" class="RegularWhiteText">Phone</label>
+
+
+                <input class="select" type="text" id="lname" name="lastname" placeholder="">
 
 
             </div>
@@ -345,7 +347,7 @@ input[type=submit]:hover {
         </div>    
 
 
-        <label for="country">Which product did you purchase?</label>  
+        <label for="country" class="RegularWhiteText">Which product did you purchase?</label>  
 
 
         <select class="" required>
@@ -384,7 +386,7 @@ input[type=submit]:hover {
             <div class="label-input-container tworow">
 
 
-                <label for="country">How would you rate our website?</label>
+                <label for="country" class="RegularWhiteText">How would you rate our website?</label>
 
 
                 <div class="rate">
@@ -410,7 +412,7 @@ input[type=submit]:hover {
           <div class="label-input-container tworow">
 
 
-              <label for="country">How would you rate our product?</label>
+              <label for="country" class="RegularWhiteText">How would you rate our product?</label>
 
 
               <div class="rate"> 
@@ -464,7 +466,7 @@ input[type=submit]:hover {
       <label for="subject">Comments</label>
 
 
-      <textarea class="textareacolor" id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      <textarea class="textareacolor" id="subject" name="subject" placeholder="" style="height:200px"></textarea>
 
 
       <input type="submit" value="Submit" onclick='alert("Thank you for helping us improve, our customers are our #1 priority!")'>
