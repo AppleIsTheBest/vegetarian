@@ -585,6 +585,9 @@ label{
         a.navlink:visited {
             color: white;
         }  
+	a.navlink {
+	    color: white;
+	}	
 }
 <style type='text/css'>
     body {width:100%;}
