@@ -68,9 +68,8 @@
         </div>
         <div class="label-input-container tworow">
             <label class="RegularWhiteText" type="text">Device's Serial Number</label>
-            <input class="" name="Serial Number" type="text" id="require" placeholder="12 digit numeric code" required>
+            <input class="" name="Serial Number" type="text" id="require" placeholder="12 digit numeric code" onchange="handleChange(this);" required>
             <script>
-
                 function handleChange(input) {
                     if (input.value < 100000000000) input.value = 100000000000;
                     if (input.value > 999999999999) input.value = 999999999999;
@@ -80,7 +79,7 @@
         <br>
         <div class="lable-input-container tworow">
             <label class="RegularWhiteText">Country Of Residence</label>
-            <select class="" name="Country" required>
+            <select class="" name="Country" onchange="handleChange(this);" required>
                 <option value="">Select</option>
                 <option value="US">United States</option>
                 <option value="Canada">Canada</option>
