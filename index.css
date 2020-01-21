@@ -587,6 +587,14 @@ label{
         }  
 	a.navlink {
 	    color: white;
+	}
+	body {
+            padding: 0;
+	    margin: 0;
+	    width: 100%;
+	    height: 100%;
+	    min-width: 100px;
+	    min-height: 100px;
 	}	
 }
 <style type='text/css'>
