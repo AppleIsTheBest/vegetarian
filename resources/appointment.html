@@ -67,14 +67,15 @@
             <input class="" name="Phone Number" type="text" id="require" placeholder="format:xxxxxxxxxx ex:1234567890" required>
         </div>
         <div>
-            <label class="RegularWhiteText">Device's Serial Number</label>
-            <input class="" name="Serial Number" type="text" id="require" placeholder="16 digit numeric code">
+            <label class="RegularWhiteText" type="text">Device's Serial Number</label>
+            <input class="" name="Serial Number" type="text" id="require" placeholder="12 digit numeric code">
             <script>
 
                 function handleChange(input) {
                     if (input.value < 100000000000) input.value = 100000000000;
                     if (input.value > 999999999999) input.value = 999999999999;
                  }
+            </script>
         </div>
         <div>
             <label class="RegularWhiteText">Country Of Residence</label>
@@ -88,6 +89,7 @@
                 function handleChange(input) {
                     if (input.value == "Other") system.out.println ("You are not eligible to send in your device for repairs.");
                 }
+            </script>
         </div>
     </div>
 
