@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+  <link rel="stylesheet" type="text/css" href="../index.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans" rel="stylesheet">
+  <script src="../jquery-3.1.1.min.js"></script>
+  <link rel="icon" type="image/png" href="../LOGO2.png">
+  <script type="text/javascript" src="../index.js"></script>
+    <script src="index.js"></script>
+  <title>Purchase</title>
+
+    <style>
+        .date{
+            margin-right: 350;
+        }
+        .selectMenu{
+            margin-right: 350;
+        }   
+        .RegularWhiteText{
+            color: white;
+        }
+        body {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+    </style>
+</head>
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+   <nav>
+   <a href="https://appleisthebest.github.io/AR-and-VR/"><img src ="https://appleisthebest.github.io/AR-and-VR/LOGO.png" width="75" height="40" margin-top="15" margin-left="75"></a>
+    <a class="navlink" margin-left="15" href="https://appleisthebest.github.io/AR-and-VR/escaperooms/">Products</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/book/">Purchase</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/location/">Contact Us</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/resources">Support</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/resources/Feedback.html">Feedback</a>
+  </nav>
+      <h1 class="tc">Order Now</h1>
+    <form action="action.php" method="get">
+        <!-- Currently not working. 405 Error. Not sure how to fix. -->
+    <article class="c form">
+        <h2>Which Model?</h2>
+    <div class="flex-container">
+        <select id="escape-room-select" class="selectMenu" required>
+            <option value="">Select</option>
+            <option value="Horizon View Headset" data-hours="1">Horizon View Headset</option>
+            <option value="Horizon Cardboard" data-hours="0.5">Horizon Cardboard</option>
+        </select>
+    </div>
+    <h2>Your Information</h2>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">First Name</label>
+            <input class="" name="First name" type="text" id="require" required><br>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Last Name</label>
+            <input class="" name="Last name" type="text" id="require" required>
+        </div>
+        <div>
+            <label class="RegularWhiteText">Phone Number</label>
+            <input class="" name="Phone Number" type="text" id="require" placeholder="format:xxxxxxxxxx ex:1234567890" required>
+        </div>
+        <div>
+            <label class="RegularWhiteText">Device's Serial Number</label>
+            <input class="" name="Serial Number" type="text" id="require" placeholder="16 digit numeric code">
+            <script>
+
+                function handleChange(input) {
+                    if (input.value < 100000000000) input.value = 100000000000;
+                    if (input.value > 999999999999) input.value = 999999999999;
+                 }
+        </div>
+        <div>
+            <label class="RegularWhiteText">Country Of Residence</label>
+            <select class="" name="Country" required>
+                <option value="">Select</option>
+                <option value="US">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="Other">Other</option>
+            </select>
+            <script>
+                function handleChange(input) {
+                    if (input.value == "Other") system.out.println ("You are not eligible to send in your device for repairs.");
+                }
+        </div>
+    </div>
+
+        <h2>Disclaimers & Terms/Conditions</h2>
+        <label class="RegularWhiteText">I agree to all of the <a href="https://appleisthebest.github.io/AR-and-VR/Horizon%20Tech%20Terms%20and%20Conditions%20(2).pdf" target="_blank">terms and conditions</a> and I am above the age of 18.
+        <input type="checkbox" required>
+    </div>
+    <button class="button mt32">Order Now</button>
+    </article>
+</form>
+</body>
+</html>
