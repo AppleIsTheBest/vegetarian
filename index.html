@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
   <link rel="stylesheet" type="text/css" href="index.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans" rel="stylesheet">
   <link rel="icon" type="image/png" href="LOGO2.png">
@@ -11,10 +10,11 @@
   <script type="text/javascript" src="index.js"></script>
   <title>Horizon Tech</title>
   <style>
-    body {
-      max-width: 100%;
-      height: auto;
-      width: auto\9; /* ie8 */
+    @media only screen and (max-width:620px) {
+    /* For mobile phones: */
+      body {
+        width:100%;
+      }
     }
   </style>
 </head>
