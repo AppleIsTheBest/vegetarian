@@ -68,7 +68,7 @@
         </div>
         <div class="label-input-container tworow">
             <label class="RegularWhiteText" type="text">Device's Serial Number</label>
-            <input class="" name="Serial Number" type="text" id="require" placeholder="12 digit numeric code" required>
+            <input class="" name="Serial Number" type="text" id="require" placeholder="12 digit numeric code" onchange="handleChange(this);" required>
             <!-- <script>
                 function handleChange(input) {
                     if (input.value < 100000000000) input.value = 100000000000;
@@ -79,17 +79,12 @@
         <br>
         <div class="lable-input-container tworow">
             <label class="RegularWhiteText">Country Of Residence</label>
-            <select class="" name="Country" onchange="handleChange(this);" required>
+            <select class="" name="Country" required>
                 <option value="">Select</option>
                 <option value="US">United States</option>
                 <option value="Canada">Canada</option>
                 <option value="Other">Other</option>
             </select>
-            <script>
-                function handleChange(input) {
-                    if (input.value == "Other") system.out.println ("You are not eligible to send in your device for repairs.");
-                }
-            </script>
         </div>
     </div>
 
