@@ -320,7 +320,7 @@ body {
                 <label for="fname" class="RegularWhiteText">Full  Name</label>
 
 
-                <input class="select" type="text" id="fname" name="firstname" placeholder="">
+                <input class="select" type="text" id="fname" name="fullname" placeholder="" required>
 
 
             </div>
@@ -332,7 +332,7 @@ body {
                 <label for="email" class="RegularWhiteText">Email</label>
 
 
-                <input class="select" type="text" id="lname" name="lastname" placeholder="">
+                <input class="select" type="text" id="lname" name="email" placeholder="" required>
 
 
             </div>
@@ -359,23 +359,25 @@ body {
         <select class="" required>
 
 
-            <option value="Select">Select</option>
+            <option value="Select" required>Select</option>
 
 
-            <option value="Option1">Option 1</option>	
+            <option value="Option1" required>Horizon View Headset</option>	
 
 
-            <option value="Option2">Option 2</option>
+            <option value="Option2" required>Horizon Cardboard</option>
 
 
-            <option vale="Option3">Option 3</option>
+            <option value="Option3" required>Option 3</option>
 
 
-            <option vale="Option4">Option 4</option>
+            <option value="Option4" required>Option 4</option>
 
 
-            <option vale="Option5">Option 5</option>
-
+            <option value="Option5" required>Option 5</option>
+            
+            
+            <option value="Option 6" required>Replacement Charger</option>
 
             <!-- Fix Color -->
 
@@ -392,7 +394,7 @@ body {
             <div class="label-input-container tworow">
 
 
-                <label for="country" class="RegularWhiteText">How would you rate our website?</label>
+                <label for="country" class="RegularWhiteText" required>How would you rate our website?</label>
 
 
                 <div class="rate">
@@ -421,7 +423,7 @@ body {
               <label for="country" class="RegularWhiteText">How would you rate our product?</label>
 
 
-              <div class="rate"> 
+              <div class="rate" required> 
 
 
                 <input type="radio" class="star5" name="rate" value="5" />
@@ -472,7 +474,7 @@ body {
       <label for="subject" class="RegularWhiteText">Comments</label>
 
 
-      <textarea class="textareacolor" id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+      <textarea class="textareacolor" id="subject" name="subject" placeholder="" style="height:200px" required></textarea>
 
 
       <input type="submit" value="Submit" onclick='alert("Thank you for helping us improve, our customers are our #1 priority!")'>
