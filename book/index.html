@@ -73,7 +73,7 @@
         </div>
     </div>
      <label class="RegularWhiteText">How many products? (Only 10 per order)</label>
-    <input class="tworow" type="number" name="number" id="number" onchange="handleChange(this);"></input>
+    <input class="tworow" type="number" name="number" id="number" onchange="handleChange(this);" required></input>
     <script>
   function handleChange(input) {
     if (input.value < 1) input.value = 1;
@@ -102,7 +102,7 @@
     <h2>Payment Information</h2>
     <label class="RegularWhiteText">Card Type</label>
     <select class="select" required>
-        <option value="s">Select</option>
+        <option value="">Select</option>
         <option value="debit">Debit</option>
         <option value="credit">Credit</option>
     </select>
