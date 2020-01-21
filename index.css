@@ -582,10 +582,10 @@ label{
         a:visited {
             color: #0099ff;
         }
-        a.navlink:visited {
+        .navlink:visited {
             color: white;
         }  
-	a.navlink {
+	.navlink {
 	    color: white;
 	}	
 }
