@@ -88,7 +88,7 @@
             <script>
                 var country = document.getElementById.value ("country");
                 if (country == "Other"){
-                    alert ("You are not eligible to submit this request. Please contact our support.")
+                    document.getElementById("eligible").innerHTML = "You are not eligible to submit this request. Please contact our support.";
                 }    
             </script>
         </div>
@@ -99,6 +99,7 @@
         <input type="checkbox" required>
     </div>
         <br>
+        <p id="eligible"></p>
     <button class="button mt32">Request Now</button>
     </article>
 </form>
