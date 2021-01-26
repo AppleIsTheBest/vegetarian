@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+  <link rel="stylesheet" type="text/css" href="../index.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans" rel="stylesheet">
+  <script src="../jquery-3.1.1.min.js"></script>
+  <link rel="icon" type="image/png" href="../LOGO2.png">
+  <script type="text/javascript" src="../index.js"></script>
+    <script src="index.js"></script>
+  <title>Purchase</title>
+
+    <style>
+        .date{
+            margin-right: 350;
+        }
+        .selectMenu{
+            margin-right: 350;
+        }   
+        .RegularWhiteText{
+            color: white;
+        }
+      body {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+    a:hover {
+
+      color: grey;
+
+    }
+
+    .button {
+
+      color: #0099ff;
+
+    }  
+    </style>
+</head>
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+   <nav>
+   <a href="https://appleisthebest.github.io/AR-and-VR/"><img src ="https://appleisthebest.github.io/AR-and-VR/LOGO.png" width="75" height="40" margin-top="15" margin-left="75"></a>
+    <a class="navlink" margin-left="15" href="https://appleisthebest.github.io/AR-and-VR/escaperooms/">Products</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/book/">Purchase</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/location/">Contact Us</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/resources">Support</a>
+    <a class="navlink" href="https://appleisthebest.github.io/AR-and-VR/resources/Feedback.html">Feedback</a>
+  </nav>
+      <h1 class="tc">Order Now</h1>
+    <form action="action.php" method="get">
+        <!-- Currently not working. 405 Error. Not sure how to fix. -->
+    <article class="c form">
+    <script>
+        var escapeRoom = document.getElementById("test")
+        if (escapeRoom == "Select"){
+            alert("Please select a product.")
+        }    
+    </script>
+        <h2>Which Model?</h2>
+    <div class="flex-container">
+        <select id="escape-room-select" class="selectMenu" required>
+            <option value="">Select</option>
+            <option value="Horizon View Headset" data-hours="1">Horizon View Headset</option>
+            <option value="Horizon Cardboard" data-hours="0.5">Horizon Cardboard</option>
+            <option value="Controllers" data-hours="0.5">Controllers</option>
+            <option value="Charger Replacement" data-hours="0.75">Replacement Charger</option>
+        </select>
+    </div>
+    <h2>Your Information</h2>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">First Name</label>
+            <input class="" name="First name" type="text" id="require" required><br>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Last Name</label>
+            <input class="" name="Last name" type="text" id="require" required>
+        </div>
+    </div>
+     <label class="RegularWhiteText">How many products? (Only 10 per order)</label>
+    <input class="tworow" type="number" name="number" id="number" onchange="handleChange(this);" required></input>
+    <script>
+  function handleChange(input) {
+    if (input.value < 1) input.value = 1;
+    if (input.value > 10) input.value = 10;
+  }
+</script><br>
+    <h2>Contact Information</h2>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">E-Mail Address</label>
+            <input name="e-mail address" type="email" required>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Phone Number</label>
+            <input name="phone number" type="text" placeholder="format:xxxxxxxxxx ex:1234567890" required>
+        </div>
+    </div>
+        <label class="RegularWhiteText">Date of Birth</label>
+    <input type="date" name="date" class="tworow" required>
+    <script>
+        var age = document.getElementById.value;
+        if (age < 18){
+            alert("You must be 18 or over to book a room.");
+        }    
+    </script>
+    <h2>Payment Information</h2>
+    <label class="RegularWhiteText">Card Type</label>
+    <select class="select" required>
+        <option value="">Select</option>
+        <option value="debit">Debit</option>
+        <option value="credit">Credit</option>
+    </select>
+    <div class="flex-container">
+       <div class="label-input-container threerow">
+           <label class="RegularWhiteText">Card Number</label>
+           <input name="credit card" type="text" required>
+       </div>  
+       <div class="label-input-container threerow">
+           <label class="RegularWhiteText">Expiration Date</label>
+           <input class="" name="Expiration" type="text" placeholder="mm/yy" required>
+       </div> 
+       <div class="label-input-container threerow">
+           <label class="RegularWhiteText">Three Digit Security Code (CCV)</label>
+           <input class="" name="CCV" type="number" required>
+       </div>
+    </div>
+    <div>
+        <h2>Disclaimers & Terms/Conditions</h2>
+        <label class="RegularWhiteText">I agree to all of the <a href="https://appleisthebest.github.io/AR-and-VR/Horizon%20Tech%20Terms%20and%20Conditions%20(2).pdf" target="_blank">terms and conditions</a> and I am above the age of 18.
+        <input type="checkbox" required>
+    </div>
+    <button class="button mt32">Order Now</button>
+    </article>
+</form>
+</body>
+</html>
