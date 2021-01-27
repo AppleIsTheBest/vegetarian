@@ -58,8 +58,17 @@
         <!-- Currently not working. 405 Error. Not sure how to fix. -->
     <article class="c form">
     <script>
-        var escapeRoom = document.getElementById("test")
-        if (escapeRoom == "Select"){
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        var param = getUrlVars()["product"];
+        var product = document.getElementById("test")
+        product = param;
+        if (product == "Select"){
             alert("Please select a product.")
         }    
     </script>
