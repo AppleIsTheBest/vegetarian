@@ -139,14 +139,7 @@
             <label class="RegularWhiteText">Custom Text</label>
             <input class="" type="text" id="require" required>
         </div>
-        <div class="flex-container">
-        <select id="escape-room-select" class="selectMenu" required>
-            <option value="">Select</option>
-            <option value="Model SF140 E-bike" data-hours="1">Model SF140 E-bike</option>
-            <option value="Model SF4000 E-bike" data-hours="0.5">Model SF4000 E-bike</option>
-            <option value="Cheap E-bike" data-hours="0.5">Model NF50 E-bike</option>
-        </select>
-            <br>
+        <div>
             <label class="RegularWhiteText">What is the quantity? (Only 5 per order)</label>
     <input class="tworow" type="number" name="number" id="number" onchange="handleChange(this);" required></input>
     <script>
@@ -155,6 +148,15 @@
     if (input.value > 5) input.value = 5;
   }
 </script><br>
+        </div>
+        <div class="flex-container">
+        <select id="escape-room-select" class="selectMenu" required>
+            <option value="">Select</option>
+            <option value="Model SF140 E-bike" data-hours="1">Model SF140 E-bike</option>
+            <option value="Model SF4000 E-bike" data-hours="0.5">Model SF4000 E-bike</option>
+            <option value="Cheap E-bike" data-hours="0.5">Model NF50 E-bike</option>
+        </select>
+            <br>
     </div>
     <div>
         <h2>Disclaimers & Terms/Conditions</h2>
