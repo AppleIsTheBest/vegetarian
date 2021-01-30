@@ -92,14 +92,6 @@
             <input class="" name="Last name" type="text" id="require" required>
         </div>
     </div>
-     <label class="RegularWhiteText">How many products? (Only 10 per order)</label>
-    <input class="tworow" type="number" name="number" id="number" onchange="handleChange(this);" required></input>
-    <script>
-  function handleChange(input) {
-    if (input.value < 1) input.value = 1;
-    if (input.value > 10) input.value = 10;
-  }
-</script><br>
     <h2>Contact Information</h2>
     <div class="flex-container">
         <div class="label-input-container tworow">
@@ -112,12 +104,14 @@
         </div>
     </div>
         <label class="RegularWhiteText">Date of Birth</label>
-    <input type="date" name="date" class="tworow" required>
+    <input type="text" name="age" class="tworow" onchange="checkAge(this);" required>
     <script>
-        var age = document.getElementById.value;
-        if (age < 18){
-            alert("You must be 18 or older to purchase from us.");
-        }    
+        function checkAge(input) {
+            var age = input.value;
+            if (Number(age) < 18){
+                alert("You must be 18 or older to purchase from us.");
+            }
+        }
     </script>
     <h2>Payment Information</h2>
     <label class="RegularWhiteText">Card Type</label>
@@ -152,10 +146,19 @@
             <option value="Model SF4000 E-bike" data-hours="0.5">Model SF4000 E-bike</option>
             <option value="Cheap E-bike" data-hours="0.5">Model NF50 E-bike</option>
         </select>
+            <br>
+            <label class="RegularWhiteText">What is the quantity? (Only 5 per order)</label>
+    <input class="tworow" type="number" name="number" id="number" onchange="handleChange(this);" required></input>
+    <script>
+  function handleChange(input) {
+    if (input.value < 1) input.value = 1;
+    if (input.value > 5) input.value = 5;
+  }
+</script><br>
     </div>
     <div>
         <h2>Disclaimers & Terms/Conditions</h2>
-        <label class="RegularWhiteText">I agree to all of the <a href="https://appleisthebest.github.io/ebikes-transportation/Horizon%20Tech%20Terms%20and%20Conditions%20(2).pdf" target="_blank">terms and conditions</a> and I am above the age of 18.
+        <label class="RegularWhiteText">I agree to all of the <a href="../resources/TERMS%20AND%20CONDITIONS%20FOR%20CURSORIAM.pdf" target="_blank">terms and conditions</a> and I am above the age of 18.
         <input type="checkbox" required>
     </div>
     <button class="button mt32">Order Now</button>
