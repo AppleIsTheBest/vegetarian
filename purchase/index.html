@@ -104,13 +104,11 @@
         </div>
     </div>
         <label class="RegularWhiteText">Date of Birth</label>
-    <input type="text" name="age" class="tworow" onchange="checkAge(this);" required>
+    <input type="number" name="age" class="tworow" onchange="checkAge(this);" required>
     <script>
         function checkAge(input) {
             var age = input.value;
-            if (Number(age) < 18){
-                alert("You must be 18 or older to purchase from us.");
-            }
+            if (age < 18) alert("You must be 18 or older to purchase from us.");
         }
     </script>
     <h2>Payment Information</h2>
