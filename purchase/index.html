@@ -145,8 +145,8 @@
         <h2>Product Information</h2>
         <div class="flex-container">
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Custom Text on Frame</label>
-            <input class="" type="text" id="require" required>
+            <label class="RegularWhiteText">Custom Text on Frame (30 Characters)</label>
+            <input class="" type="text" id="require" onchange="if (this.value.length > 30) this.value = this.value..substr(0,30)" required>
         </div>
         <div class="label-input-container tworow">
             <label class="RegularWhiteText">What is the quantity? (Only 5 per order)</label>
