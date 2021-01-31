@@ -146,7 +146,18 @@
         <div class="flex-container">
         <div class="label-input-container tworow">
             <label class="RegularWhiteText">Custom Text on Frame (30 Characters)</label>
-            <input class="" type="text" id="require" onchange="if (this.value.toString().length > 30) this.value = this.value.substr(0,30);" required>
+            <input class="" type="text" onchange="checkCharacters(this);">
+            <script>
+                function checkCharacters(input) {
+                    if (input.value.toString().length > 30) input.value = input.value.substr(0,30);
+                    let allowedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m" ,"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", ",", "?"];
+                    foreach (character of input.value.toString().toLowerCase()) {
+                        foreach (allowed of allowedCharacters) {
+                            if (character != allowed) input.value.replace(character,"");
+                        }
+                    }
+                }
+            </script>
         </div>
         <div class="label-input-container tworow">
             <label class="RegularWhiteText">What is the quantity? (Only 5 per order)</label>
