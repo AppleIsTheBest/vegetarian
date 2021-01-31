@@ -138,15 +138,15 @@
             <label class="RegularWhiteText">Custom Text on Frame</label>
             <input class="" type="text" id="require" required>
         </div>
-        <div>
+        <div class="label-input-container tworow">
             <label class="RegularWhiteText">What is the quantity? (Only 5 per order)</label>
-    <input class="tworow" type="number" name="number" id="number" onchange="handleChange(this);" required></input>
-    <script>
-  function handleChange(input) {
-    if (input.value < 1) input.value = 1;
-    if (input.value > 5) input.value = 5;
-  }
-</script><br>
+            <input class="" type="number" id="require" onchange="handleChange(this);" required>
+            <script>
+                function handleChange(input) {
+                    if (input.value < 1) input.value = 1;
+                    if (input.value > 5) input.value = 5;
+                }
+            </script><br>
         </div>
     </div>
         <div class="flex-container">
