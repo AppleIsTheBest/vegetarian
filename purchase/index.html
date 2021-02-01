@@ -62,7 +62,7 @@
     <a class="navlink" href="../resources/Feedback.html">Feedback</a>
   </nav>
       <h1 class="tc">Order Now</h1>
-    <form action="action.php" method="get">
+    <form>
         <!-- Currently not working. 405 Error. Not sure how to fix. -->
     <article class="c form">
     <script>
@@ -74,7 +74,7 @@
             return vars;
         }
         var param = getUrlVars()["product"];
-        var product = document.getElementById("test")
+        var product = document.getElementById("test").value
         product = param;
         if (product == "Select"){
             alert("Please select a product.")
