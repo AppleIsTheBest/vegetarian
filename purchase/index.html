@@ -130,7 +130,15 @@
        </div> 
        <div class="label-input-container threerow">
            <label class="RegularWhiteText">Three Digit Security Code (CVC/CVV)</label>
-           <input class="" name="CCV" type="number" placeholder="Found on the back of your card." required>
+           <input class="" name="CCV" type="number" placeholder="Found on the back of your card." onchange="verifyCode(this);" required>
+           <script>
+               function verifyCode(input) {
+                   if ((input.value.toString().length > 16 || input.value.toString().length > 16) || isNan(Number(input.value))) {
+                       alert("Your card number must consist of only numbers and must be 16 digits.");
+                       input.value = null;
+                   }
+               }
+           </script>
        </div>
     </div>
         <h2>Product Information</h2>
