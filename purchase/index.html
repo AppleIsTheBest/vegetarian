@@ -109,7 +109,7 @@
         function checkAge(input) {
             var age = input.value;
             if (age < 18) alert("You must be 18 or older to purchase from us.");
-            input.value = null;
+            if (age < 18) input.value = null;
         }
     </script>
     <h2>Payment Information</h2>
@@ -125,11 +125,12 @@
            <input name="credit card" type="text" placeholder="16 Digits Long" onchange="verifyCard(this);" required>
            <script>
                function verifyCard(input) {
-                   if ((input.value.toString().length != 3) || isNan(Number(input.value))) {
+                   if (input == null) return;
+                   if ((input.value.toString().length != 16) || isNan(Number(input.value))) {
                        alert("Your card number must consist of only numbers and must be 16 digits.");
                        input.value = null;
                    }
-                   if (Number(input.value) < 0) {
+                   if (input.value.toString().includes("-")) {
                        input.value = null;
                    }
                }
@@ -144,11 +145,12 @@
            <input class="" name="CCV" type="number" placeholder="Found on the back of your card." onchange="verifyCode(this);" required>
            <script>
                function verifyCode(input) {
+                   if (input == null) return;
                    if ((input.value.toString().length != 3) || isNan(Number(input.value))) {
                        alert("Your card number must consist of only numbers and must be 16 digits.");
                        input.value = null;
                    }
-                   if (Number(input.value) < 0) {
+                   if (input.value.toString().includes("-")) {
                        input.value = null;
                    }
                }
