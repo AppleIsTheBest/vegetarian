@@ -122,7 +122,18 @@
     <div class="flex-container">
        <div class="label-input-container threerow">
            <label class="RegularWhiteText">Card Number</label>
-           <input name="credit card" type="text" placeholder="16 Digits Long" required>
+           <input name="credit card" type="text" placeholder="16 Digits Long" onchange="verifyCard(this);" required>
+           <script>
+               function verifyCard(input) {
+                   if ((input.value.toString().length != 3) || isNan(Number(input.value))) {
+                       alert("Your card number must consist of only numbers and must be 16 digits.");
+                       input.value = null;
+                   }
+                   if (Number(input.value) < 0) {
+                       input.value = null;
+                   }
+               }
+           </script>
        </div>  
        <div class="label-input-container threerow">
            <label class="RegularWhiteText">Expiration Date</label>
@@ -133,8 +144,11 @@
            <input class="" name="CCV" type="number" placeholder="Found on the back of your card." onchange="verifyCode(this);" required>
            <script>
                function verifyCode(input) {
-                   if ((input.value.toString().length > 16 || input.value.toString().length > 16) || isNan(Number(input.value))) {
+                   if ((input.value.toString().length != 3) || isNan(Number(input.value))) {
                        alert("Your card number must consist of only numbers and must be 16 digits.");
+                       input.value = null;
+                   }
+                   if (Number(input.value) < 0) {
                        input.value = null;
                    }
                }
