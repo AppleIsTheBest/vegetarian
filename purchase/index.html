@@ -152,7 +152,7 @@
                        input.value = null;
                        return;
                    }
-                   if (input.value.toString().includes("-")) {
+                   if (Number(input.value) < 0) {
                        input.value = null;
                    }
                }
