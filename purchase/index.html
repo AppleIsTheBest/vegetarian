@@ -126,11 +126,12 @@
            <script>
                function verifyCard(input) {
                    if (input == null) return;
-                   if ((input.value.toString().length != 16) || isNan(Number(input.value))) {
+                   if ((input.value.toString().length != 16) || (isNan(Number(input.value)))) {
                        alert("Your card number must consist of only numbers and must be 16 digits.");
                        input.value = null;
+                       return;
                    }
-                   if (input.value.toString().includes("-")) {
+                   if (Number(input.value) < 0) {
                        input.value = null;
                    }
                }
@@ -149,6 +150,7 @@
                    if ((input.value.toString().length != 3) || isNan(Number(input.value))) {
                        alert("Your card number must consist of only numbers and must be 16 digits.");
                        input.value = null;
+                       return;
                    }
                    if (input.value.toString().includes("-")) {
                        input.value = null;
