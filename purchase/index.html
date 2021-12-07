@@ -181,7 +181,7 @@
         </div>
         <div class="label-input-container tworow">
             <label class="RegularWhiteText" id="quantity">How many people are in your party?</label>
-            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per registration" id="quantityInput" required>
+            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per registration" name="quantityInput" required>
             <script>
                 function handleChange(input) {
                     if (input.value < 1) input.value = 1;
@@ -205,13 +205,13 @@
                 if (input.value == "ldevent" || input.value == "mhevent") {
                     document.getElementById("customMessage").innerText = "Custom Message on Certificate*";
                     document.getElementById("quantity").innerText = "How many people are in your party?";
-                    document.getElementById("quantityInput").placeholder = "Up to 10 per registration";
+                    document.getElementsByName("quantityInput")[0].placeholder = "Up to 10 per registration";
                     document.getElementById("event_product_header").innerText = "Event Information";
                 }
                 if (input.value == "lguide" || input.value == "wguide") {
                     document.getElementById("customMessage").innerText = "Custom Message with Purchase*"
                     document.getElementById("quantity").innerText = "How many copies?";
-                    document.getElementById("quantityInput").placeholder = "Up to 10 per order";
+                    document.getElementsByName("quantityInput")[0].placeholder = "Up to 10 per order";
                     document.getElementById("event_product_header").innerText = "Product Information";
                 }
             }
