@@ -227,7 +227,7 @@
     <p id="subtotal">Subtotal: Please select an event/product and enter a quantity.</p>
     <script>
         function calculateTotal() {
-            if (document.getElementsByName("quantityInput")[0].value != null && document.getElementById("escape-room-select").value != "") {
+            if (document.getElementsByName("quantityInput")[0].value != null && document.getElementById("escape-room-select").value != null) {
                 var quantity = document.getElementsByName("quantityInput")[0].value;
                 var priceDictionary = {"ldevent": 45, "mhevent": 30, "lguide": 75, "wguide": 65};
                 document.getElementById("subtotal").innerText = "Subtotal: $" + priceDictionary[document.getElementById("escape-room-select").value] * quantity + ".00";
