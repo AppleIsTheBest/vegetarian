@@ -201,6 +201,7 @@
         </select>
         <script>
             function handleSelectionChange(input) {
+                console.log("called");
                 if (input.value == "ldevent" || input.value == "mhevent") {
                     document.getElementById("customMessage").innerText = "Custom Message on Certificate*";
                     document.getElementById("quantity").innerText = "How many people are in your party?";
