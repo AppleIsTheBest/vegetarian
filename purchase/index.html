@@ -173,15 +173,15 @@
            </script>
        </div>
     </div>
-        <h2>Product Information</h2>
+        <h2 id="event_product_header">Product Information</h2>
         <div class="flex-container">
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Custom Message on Certficate*</label>
+            <label class="RegularWhiteText" id="customMessage">Custom Message on Certficate*</label>
             <input class="" type="text" onchange="if (this.value.toString().length > 30) this.value = this.value.substr(0,30);" placeholder="Enter up to 30 characters">
         </div>
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">How many people are in your party?</label>
-            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per registration" required>
+            <label class="RegularWhiteText" id="quantity">How many people are in your party?</label>
+            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per registration" id="quantityInput" required>
             <script>
                 function handleChange(input) {
                     if (input.value < 1) input.value = 1;
@@ -190,17 +190,33 @@
             </script><br>
         </div>
     </div>
-            <label class="RegularWhiteText">Which event?</label>
+            <label class="RegularWhiteText">Which event/product?</label>
     <div class="flex-container">
-        <select id="escape-room-select" class="selectMenu" required>
+        <select id="escape-room-select" class="selectMenu" onchange="handleSelectionChange(this)" required>
             <option value="">Select</option>
-            <option value="Model SF140 E-bike" data-hours="1">Model SF140 E-bike</option>
-            <option value="Model SF4000 E-bike" data-hours="0.5">Model SF4000 E-bike</option>
+            <option value="ldevent" data-hours="1">Model SF140 E-bike</option>
+            <option value="mhevent" data-hours="0.5">Model SF4000 E-bike</option>
             <option value="Model NF50 E-bike" data-hours="0.5">Model NF50 E-bike</option>
             <option value="Model ES2000 E-scooter">Model ES2000 E-scooter</option>
             <option value="Charger">Charger</option>
             <option value="Kickstand">Kickstand</option>
         </select>
+        <script>
+            function handleSelectionChange(input) {
+                if (input.value == "ldevent" || input.value == "mhevent") {
+                    document.getElementById("customMessage").html.innerText = "Custom Message on Certificate*";
+                    document.getElementById("quantity").html.innerText = "How many people are in your party?";
+                    document.getElementById("quantityInput").html.placeholder = "Up to 10 per registration";
+                    document.getElementById("event_product_header").html.innerText = "Event Information";
+                }
+                if (input.value == "lguide" || input.value == "wguide") {
+                    document.getElementById("customMessage").html.innerText = "Custom Message with Purchase*"
+                    document.getElementById("quantity").html.innerText = "How many copies?";
+                    document.getElementById("quantityInput").html.placeholder = "Up to 10 per order";
+                    document.getElementById("event_product_header").html.innerText = "Product Information";
+                }
+            }
+        </script>
     </div>
     <div>
         <h2>Disclaimers & Terms/Conditions</h2>
