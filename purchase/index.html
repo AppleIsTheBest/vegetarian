@@ -61,7 +61,7 @@
     <a class="navlink" href="../resources/">Support</a>
     <a class="navlink" href="../resources/Feedback.html">Feedback</a>
   </nav>
-      <h1 class="tc">Order Now</h1>
+      <h1 class="tc">Register</h1>
     <form>
         <!-- Currently not working. 405 Error. Not sure how to fix. -->
     <article class="c form">
@@ -108,7 +108,7 @@
     <script>
         function checkAge(input) {
             var age = input.value;
-            if (age < 18) alert("You must be 18 or older to purchase from us.");
+            if (age < 18) alert("You must be 18 or older to sign up.");
             if (age < 18) input.value = null;
         }
     </script>
@@ -118,6 +118,14 @@
         <option value="">Select</option>
         <option value="debit">Debit</option>
         <option value="credit">Credit</option>
+    </select>
+    <label class="RegularWhiteText">Card Issuer</label>
+    <select class="select" required>
+        <option value="">Select</option>
+        <option value="visa">Visa</option>
+        <option value="discover">Discover</option>
+        <option value="mastercard">Mastercard</option>
+        <option value="amex">American Express (Amex)</option>
     </select>
     <div class="flex-container">
        <div class="label-input-container threerow">
@@ -162,16 +170,16 @@
         <h2>Product Information</h2>
         <div class="flex-container">
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Custom Text on Frame</label>
+            <label class="RegularWhiteText">Custom Message on Certficate*</label>
             <input class="" type="text" onchange="if (this.value.toString().length > 30) this.value = this.value.substr(0,30);" placeholder="Enter up to 30 characters">
         </div>
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">What is the quantity?</label>
-            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 5 per order" required>
+            <label class="RegularWhiteText">How many people are in your party?</label>
+            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per registration" required>
             <script>
                 function handleChange(input) {
                     if (input.value < 1) input.value = 1;
-                    if (input.value > 5) input.value = 5;
+                    if (input.value > 10) input.value = 10;
                 }
             </script><br>
         </div>
@@ -190,13 +198,14 @@
     </div>
     <div>
         <h2>Disclaimers & Terms/Conditions</h2>
-        <label class="RegularWhiteText">I agree to all of the <a href="../resources/TERMS%20AND%20CONDITIONS%20FOR%20CURSORIAM.pdf" class="hyperlink" target="_blank">terms and conditions</a> and I am above the age of 18.
+        <label class="RegularWhiteText">I agree to all of the <a href="" class="hyperlink" target="_blank">terms and conditions</a>.
         <input type="checkbox" required>
     </div>
-    <button class="button mt32" action="alert('Thank you for signing up!'); window.location.href = '/products';">Order Now</button>
+    <button class="button mt32" action="alert('Thank you for signing up!'); window.location.href = '/products';">Register Now</button>
     </article>
 </form>
 <footer>
+  <p style="font: 7px;">*The custom message is subject to review. Direction Inc. reserves the right to not print the message at our discretion.</p>
   <p>Copyright © 2021 Direction Inc. All rights reserved</p>
   <p>PLEASE NOTE: If you are using a mobile device to view this web page, please turn off portrait orientation lock, and turn the device on its side.</p>
 </footer>
