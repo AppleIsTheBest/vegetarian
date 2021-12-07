@@ -113,20 +113,26 @@
         }
     </script>
     <h2>Payment Information</h2>
-    <label class="RegularWhiteText">Card Type</label>
-    <select class="select" required>
-        <option value="">Select</option>
-        <option value="debit">Debit</option>
-        <option value="credit">Credit</option>
-    </select>
-    <label class="RegularWhiteText">Card Issuer</label>
-    <select class="select" required>
-        <option value="">Select</option>
-        <option value="visa">Visa</option>
-        <option value="discover">Discover</option>
-        <option value="mastercard">Mastercard</option>
-        <option value="amex">American Express (Amex)</option>
-    </select>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Card Type</label>
+            <select class="select" required>
+                <option value="">Select</option>
+                <option value="debit">Debit</option>
+                <option value="credit">Credit</option>
+            </select>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Card Issuer</label>
+            <select class="select" required>
+                <option value="">Select</option>
+                <option value="visa">Visa</option>
+                <option value="discover">Discover</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="amex">American Express (Amex)</option>
+            </select>
+        </div>
+    </div>
     <div class="flex-container">
        <div class="label-input-container threerow">
            <label class="RegularWhiteText">Card Number</label>
@@ -205,7 +211,7 @@
     </article>
 </form>
 <footer>
-  <p style="font-size: 7px;">*The custom message is subject to review. Direction Inc. reserves the right to not include the message at our discretion.</p>
+  <p style="font-size: 12px;">*The custom message is subject to review. Direction Inc. reserves the right to not include the message at our discretion.</p>
   <p>Copyright © 2021 Direction Inc. All rights reserved</p>
   <p>PLEASE NOTE: If you are using a mobile device to view this web page, please turn off portrait orientation lock, and turn the device on its side.</p>
 </footer>
