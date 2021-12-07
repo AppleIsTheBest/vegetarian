@@ -204,16 +204,16 @@
         <script>
             function handleSelectionChange(input) {
                 if (input.value == "ldevent" || input.value == "mhevent") {
-                    document.getElementById("customMessage").html.innerText = "Custom Message on Certificate*";
-                    document.getElementById("quantity").html.innerText = "How many people are in your party?";
-                    document.getElementById("quantityInput").html.placeholder = "Up to 10 per registration";
-                    document.getElementById("event_product_header").html.innerText = "Event Information";
+                    document.getElementById("customMessage").innerText = "Custom Message on Certificate*";
+                    document.getElementById("quantity").innerText = "How many people are in your party?";
+                    document.getElementById("quantityInput").placeholder = "Up to 10 per registration";
+                    document.getElementById("event_product_header").innerText = "Event Information";
                 }
                 if (input.value == "lguide" || input.value == "wguide") {
-                    document.getElementById("customMessage").html.innerText = "Custom Message with Purchase*"
-                    document.getElementById("quantity").html.innerText = "How many copies?";
-                    document.getElementById("quantityInput").html.placeholder = "Up to 10 per order";
-                    document.getElementById("event_product_header").html.innerText = "Product Information";
+                    document.getElementById("customMessage").innerText = "Custom Message with Purchase*"
+                    document.getElementById("quantity").innerText = "How many copies?";
+                    document.getElementById("quantityInput").placeholder = "Up to 10 per order";
+                    document.getElementById("event_product_header").innerText = "Product Information";
                 }
             }
         </script>
