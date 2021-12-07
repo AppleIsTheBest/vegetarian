@@ -186,6 +186,7 @@
                 function handleChange(input) {
                     if (input.value < 1) input.value = 1;
                     if (input.value > 10) input.value = 10;
+                    calculateTotal();
                 }
             </script><br>
         </div>
@@ -214,6 +215,7 @@
                     document.getElementsByName("quantityInput")[0].placeholder = "Up to 10 per order";
                     document.getElementById("event_product_header").innerText = "Product Information";
                 }
+                calculateTotal();
             }
         </script>
     </div>
@@ -222,6 +224,16 @@
         <label class="RegularWhiteText">I agree to all of the <a href="" class="hyperlink" target="_blank">terms and conditions</a>.
         <input type="checkbox" required>
     </div>
+    <p id="subtotal">Subtotal: Please select an event/product and enter a quantity.</p>
+    <script>
+        function calculateTotal() {
+            if (document.getElementsByName("quantityInput")[0].value != null && document.getElementById("escape-room-select").value != "") {
+                var quantity = document.getElementsByName("quantityInput")[0].value;
+                var priceDictionary = {"ldevent": 45, "mhevent": 30, "lguide": 75, "wguide": 65};
+                document.getElementById("subtotal").innerText = "Subtotal: $" + priceDictionary[document.getElementById("escape-room-select").value] * quantity + ".00";
+            }
+        }
+    </script>
     <button class="button mt32" action="alert('Thank you for signing up!'); window.location.href = '/products';">Register Now</button>
     </article>
 </form>
