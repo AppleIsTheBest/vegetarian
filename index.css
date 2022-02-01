@@ -1,5 +1,12 @@
 <style>
 
+@font-face {
+    font-family: 'Quicksand';
+    src: url('Quicksand-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: light;
+}
+
 * {
   box-sizing: border-box;
 }
