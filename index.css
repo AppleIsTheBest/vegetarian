@@ -52,6 +52,11 @@ left: 50%;
 text-color: white;
 }
 
+.RegularWhiteText{
+    color: white;
+    font-family: "Quicksand-Light";
+}
+
 
 .fade {
   -webkit-animation-name: fade;
