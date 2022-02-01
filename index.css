@@ -61,7 +61,7 @@ text-color: white;
 
 .RegularWhiteText{
     color: white;
-    font-family: "Quicksand-Light";
+    font-family: "Quicksand";
 }
 
 
@@ -196,7 +196,7 @@ html,body{
 	padding: 0;
 }
 h1{
-	font-family: 'Quicksand-Light';
+	font-family: 'Quicksand';
 	font-size: 50px;
 	margin-top: 10px;
 	color: white;
