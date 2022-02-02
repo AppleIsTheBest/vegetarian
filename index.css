@@ -196,7 +196,7 @@ html,body{
 	padding: 0;
 }
 h1{
-	font-family: 'Orbitron';
+	font-family: 'Quicksand';
 	font-size: 50px;
 	margin-top: 10px;
 	color: white;
@@ -313,7 +313,7 @@ input[type="date"]{
 #titlename {
 	text-align: center;
 	color: black;
-	// font-family: 'Orbitron';
+	font-family: 'Quicksand';
 	font-variant: small-caps;
 	font-size: 100px;
 	margin:0;
@@ -419,7 +419,7 @@ input.threerow{
 /**New Input Code**/
 
 body {
-    font-family: "Quicksand-Light";
+    font-family: "Quicksand";
 }
 
 .container {
