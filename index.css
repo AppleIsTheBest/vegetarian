@@ -1,5 +1,9 @@
 <style>
 
+.button {
+	font-family: 'Quicksand';
+}
+
 @font-face {
     font-family: 'Quicksand';
     src: url('Quicksand-Light.ttf') format('truetype');
