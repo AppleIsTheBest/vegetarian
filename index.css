@@ -250,7 +250,8 @@ a.navlink{
 a.navlink:hover {
 	text-decoration: none;
 	color: #ffffff;
-	background-color: #0099ff;
+	// background-color: #0099ff;
+	background-color: #000000;
 }
 .button, input[type="submit"]{
 	padding: 14px;
@@ -314,7 +315,8 @@ input[type="date"]{
 	background-color: white !important;
 }
 .button.light::after, input[type="submit"].light::after{
-	background-color: #0099ff !important;
+	// background-color: #0099ff !important;
+	background-color: #000000
 }
 #titlename {
 	text-align: center;
