@@ -191,14 +191,14 @@
             </script><br>
         </div>
     </div>
-            <label class="RegularWhiteText">Which event/product?</label>
+            <label class="RegularWhiteText">Which Package?</label>
     <div class="flex-container">
         <select id="escape-room-select" class="selectMenu" onchange="handleSelectionChange(this)" required>
             <option value="">Select</option>
-            <option value="ldevent" data-hours="1">Intro to Leadership</option>
-            <option value="mhevent" data-hours="0.5">Mental Health and Awareness</option>
-            <option value="lguide" data-hours="0.5">A Guide to Leadership</option>
-            <option value="wguide">A Guide to Wellness</option>
+            <option value="ldevent" data-hours="1">Space Traveler</option>
+            <option value="mhevent" data-hours="0.5">Space Traveler Plus</option>
+            <option value="lguide" data-hours="0.5">Space Explorer</option>
+            <option value="wguide">Space Explorer Plus</option>
         </select>
         <script>
             function handleSelectionChange(input) {
@@ -207,7 +207,7 @@
                     document.getElementById("customMessage").innerText = "Custom Message on Certificate*";
                     document.getElementById("quantity").innerText = "How many people are in your party?";
                     document.getElementsByName("quantityInput")[0].placeholder = "Up to 10 per registration";
-                    document.getElementById("event_product_header").innerText = "Event Information";
+                    document.getElementById("event_product_header").innerText = "Adventure Information";
                 }
                 if (input.value == "lguide" || input.value == "wguide") {
                     document.getElementById("customMessage").innerText = "Custom Message with Purchase*"
@@ -238,8 +238,8 @@
     </article>
 </form>
 <footer>
-  <p style="font-size: 12px;">*The custom message is subject to review. Direction Inc. reserves the right to not include the message at our discretion.</p>
-  <p>Copyright © 2021 Direction Inc. All rights reserved</p>
+  <p style="font-size: 12px;">*The custom message is subject to review. Extraplanetary Exploration Corp. reserves the right to not include the message at our discretion.</p>
+  <p>Copyright © 2022 Extraplanetary Exploration Corp. All rights reserved</p>
   <p>PLEASE NOTE: If you are using a mobile device to view this web page, please turn off portrait orientation lock, and turn the device on its side.</p>
 </footer>
 </body>
