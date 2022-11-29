@@ -303,7 +303,8 @@ input[type="date"]{
 	width: 100% !important;
 }
 .button.light, input[type="submit"].light{
-	color: #0099ff !important;
+	//color: #0099ff !important;
+	color: #000000 !important;
 }
 .button.light:hover, input[type="submit"].light:hover{
 	color:white !important;
