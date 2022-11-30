@@ -173,47 +173,56 @@
            </script>
        </div>
     </div>
-        <h2 id="event_product_header">Product Information</h2>
+        <h2 id="event_product_header">Package Information</h2>
         <div class="flex-container">
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText" id="customMessage">Custom Message on Certficate*</label>
-            <input class="" type="text" onchange="if (this.value.toString().length > 30) this.value = this.value.substr(0,30);" placeholder="Enter up to 30 characters">
+            <label class="RegularWhiteText" id="customMessage">Length of Journey (in days)</label>
+            <input id="journeyLength" type="text" onchange="handleLengthChange(this);" placeholder="" disabled>
         </div>
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText" id="quantity">How many people are in your party?</label>
-            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per registration" name="quantityInput" required>
+            <label class="RegularWhiteText" id="quantity">How many passengers should be on this reservation?</label>
+            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per reservation" name="quantityInput" required>
             <script>
                 function handleChange(input) {
                     if (input.value < 1) input.value = 1;
                     if (input.value > 10) input.value = 10;
                     calculateTotal();
                 }
+                function handleLengthChange(input) {
+                    if (maxLengthApplicable == true) this.value = this.value <= 30 ? this.value : 30
+                    this.value = this.value >= 1 ? this.value ? 1
+                    calculateTotal();
+                }
             </script><br>
         </div>
     </div>
-            <label class="RegularWhiteText">Which Package?</label>
+            <label class="RegularWhiteText">Which package?</label>
     <div class="flex-container">
-        <select id="escape-room-select" class="selectMenu" onchange="handleSelectionChange(this)" required>
+        <select id="packageSelection" class="selectMenu" onchange="handleSelectionChange(this)" required>
             <option value="">Select</option>
-            <option value="ldevent" data-hours="1">Space Traveler</option>
-            <option value="mhevent" data-hours="0.5">Space Traveler Plus</option>
-            <option value="lguide" data-hours="0.5">Space Explorer</option>
-            <option value="wguide">Space Explorer Plus</option>
+            <option value="stb">Space Traveler</option>
+            <option value="stp">Space Traveler Plus</option>
+            <option value="seb">Space Explorer</option>
+            <option value="sep">Space Explorer Plus</option>
         </select>
         <script>
             function handleSelectionChange(input) {
                 console.log("called");
-                if (input.value == "ldevent" || input.value == "mhevent") {
-                    document.getElementById("customMessage").innerText = "Custom Message on Certificate*";
-                    document.getElementById("quantity").innerText = "How many people are in your party?";
-                    document.getElementsByName("quantityInput")[0].placeholder = "Up to 10 per registration";
-                    document.getElementById("event_product_header").innerText = "Adventure Information";
+                if (input.value == "stb" || input.value == "stp") {
+                    document.getElementById("journeyLength").disabled = false
+                    document.getElementById("journeyLength").placeholder = "Package permits up to 30 days"
+                    var maxLengthApplicable = true;
                 }
-                if (input.value == "lguide" || input.value == "wguide") {
-                    document.getElementById("customMessage").innerText = "Custom Message with Purchase*"
-                    document.getElementById("quantity").innerText = "How many copies?";
-                    document.getElementsByName("quantityInput")[0].placeholder = "Up to 10 per order";
-                    document.getElementById("event_product_header").innerText = "Product Information";
+                else if (input.value == "seb" || input.value == "sep") {
+                    document.getElementById("journeyLength").disabled = false
+                    document.getElementById("journeyLength").placeholder = "Enter the length of your stay"
+                    var maxLengthApplicable = false;
+                }
+                else {
+                    document.getElementById("journeyLength").disabled = true
+                    document.getElementById("journeyLength").value = ""
+                    document.getElementById("journeyLength").placeholder = ""
+                    var maxLengthApplicable = true;
                 }
                 calculateTotal();
             }
@@ -224,22 +233,23 @@
         <label class="RegularWhiteText">I agree to all of the <a href="" class="hyperlink" target="_blank">terms and conditions</a>.
         <input type="checkbox" required>
     </div>
-    <p id="subtotal">Subtotal: Please select an event/product and enter a quantity.</p>
+    <p id="subtotal">Subtotal: Please select an package and enter the number of passengers and days.</p>
     <script>
         function calculateTotal() {
-            if (document.getElementsByName("quantityInput")[0].value != null && document.getElementById("escape-room-select").value != null) {
+            if (document.getElementsByName("quantityInput")[0].value != null && document.getElementById("packageSelection").value != null && document.getElementById("journeyLength").value != null) {
                 var quantity = document.getElementsByName("quantityInput")[0].value;
-                var priceDictionary = {"ldevent": 45, "mhevent": 30, "lguide": 75, "wguide": 65};
-                document.getElementById("subtotal").innerText = "Subtotal: $" + priceDictionary[document.getElementById("escape-room-select").value] * quantity + ".00";
+                var priceDictionary = {"stb": 500000, "stp": 750000, "seb": 1500000, "sep": 2500000};
+                var lengthOfStay = document.getElementById("journeyLength").value;
+                document.getElementById("subtotal").innerText = "Subtotal: $" + priceDictionary[document.getElementById("packageSelection").value] * quantity * lengthOfStay + ".00";
             }
         }
     </script>
-    <button class="button" action="alert('Thank you for signing up!'); window.location.href = '/products';" style="font-family: Quicksand;">Register Now</button>
+    <button class="button" action="alert('Thank you for signing up! We will reach out with more details about trainings and then we will assist you in finishing your booking.'); window.location.href = '/products';" style="font-family: Quicksand;">Register Now</button>
     </article>
 </form>
 <footer>
-  <p style="font-size: 12px;">*The custom message is subject to review. ExtraPlanetary Explorations Inc. reserves the right to not include the message at our discretion.</p>
-  <p>Copyright © 2022 ExtraPlanetary Explorations Inc. All rights reserved</p>
+  <p style="font-size: 12px;">*The custom message is subject to review. Extraplanetary Exploration Corp. reserves the right to not include the message at our discretion.</p>
+  <p>Copyright © 2022 Extraplanetary Exploration Corp. All rights reserved</p>
   <p>PLEASE NOTE: If you are using a mobile device to view this web page, please turn off portrait orientation lock, and turn the device on its side.</p>
 </footer>
 </body>
