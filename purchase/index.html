@@ -182,7 +182,7 @@
                 function handleLengthChange(input) {
                     console.log("Triggered Length Change");
                     if (maxLengthApplicable == true) input.value = input.value <= 30 ? input.value : 30
-                    input.value = input.value >= 1 ? input.value ? 1
+                    input.value = input.value >= 1 ? input.value : 1
                     calculateTotal();
                 }
             </script>
