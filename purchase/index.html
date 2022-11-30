@@ -175,7 +175,7 @@
     </div>
         <h2 id="event_product_header">Package Information</h2>
         <div class="flex-container">
-        <div class="label-input-container tworow">
+        <div class="label-input-container tworow" id="lengthDiv" hidden>
             <label class="RegularWhiteText" id="customMessage">Length of Journey (in days)</label>
             <input id="journeyLength" type="number" onchange="handleLengthChange(this);" placeholder=" " disabled required>
             <script>
@@ -214,11 +214,13 @@
                 if (input.value == "stb" || input.value == "stp") {
                     document.getElementById("journeyLength").disabled = false
                     document.getElementById("journeyLength").placeholder = "Package permits up to 30 days"
+                    document.getElementById("lengthDiv").hidden = false
                     var maxLengthApplicable = true;
                 }
                 else if (input.value == "seb" || input.value == "sep") {
                     document.getElementById("journeyLength").disabled = false
                     document.getElementById("journeyLength").placeholder = "Enter the length of your stay"
+                    document.getElementById("lengthDiv").hidden = false
                     var maxLengthApplicable = false;
                 }
                 else {
