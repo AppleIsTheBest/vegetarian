@@ -177,7 +177,15 @@
         <div class="flex-container">
         <div class="label-input-container tworow">
             <label class="RegularWhiteText" id="customMessage">Length of Journey (in days)</label>
-            <input id="journeyLength" type="text" onchange="handleLengthChange(this);" placeholder="" disabled>
+            <input id="journeyLength" type="text" onchange="handleLengthChange(this);" placeholder="" disabled required>
+            <script>
+                function handleLengthChange(input) {
+                    console.log("Triggered Length Change");
+                    if (maxLengthApplicable == true) input.value = input.value <= 30 ? input.value : 30
+                    input.value = input.value >= 1 ? input.value ? 1
+                    calculateTotal();
+                }
+            </script>
         </div>
         <div class="label-input-container tworow">
             <label class="RegularWhiteText" id="quantity">How many passengers should be on this reservation?</label>
@@ -186,11 +194,6 @@
                 function handleChange(input) {
                     if (input.value < 1) input.value = 1;
                     if (input.value > 10) input.value = 10;
-                    calculateTotal();
-                }
-                function handleLengthChange(input) {
-                    if (maxLengthApplicable == true) this.value = this.value <= 30 ? this.value : 30
-                    this.value = this.value >= 1 ? this.value ? 1
                     calculateTotal();
                 }
             </script><br>
