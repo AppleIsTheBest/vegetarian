@@ -112,67 +112,7 @@
             if (age < 18) input.value = null;
         }
     </script>
-    <h2>Payment Information</h2>
-    <div class="flex-container">
-        <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Card Type</label>
-            <select class="select" required>
-                <option value="">Select</option>
-                <option value="debit">Debit</option>
-                <option value="credit">Credit</option>
-            </select>
-        </div>
-        <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Card Issuer</label>
-            <select class="select" required>
-                <option value="">Select</option>
-                <option value="visa">Visa</option>
-                <option value="discover">Discover</option>
-                <option value="mastercard">Mastercard</option>
-                <option value="amex">American Express (Amex)</option>
-            </select>
-        </div>
-    </div>
-    <div class="flex-container">
-       <div class="label-input-container threerow">
-           <label class="RegularWhiteText">Card Number</label>
-           <input name="credit card" type="text" placeholder="16 Digits Long" onchange="verifyCard(this);" required>
-           <script>
-               function verifyCard(input) {
-                   if (input == null) return;
-                   if ((input.value.toString().length != 16) || (isNaN(Number(input.value)))) {
-                       alert("Your card number must consist of only numbers and must be 16 digits.");
-                       input.value = null;
-                       return;
-                   }
-                   if (Number(input.value) < 0) {
-                       input.value = null;
-                   }
-               }
-           </script>
-       </div>  
-       <div class="label-input-container threerow">
-           <label class="RegularWhiteText">Expiration Date</label>
-           <input class="" name="Expiration" type="text" placeholder="mm/yy" required>
-       </div> 
-       <div class="label-input-container threerow">
-           <label class="RegularWhiteText">Three Digit Security Code (CVC/CVV)</label>
-           <input class="" name="CCV" type="number" placeholder="Found on the back of your card." onchange="verifyCode(this);" required>
-           <script>
-               function verifyCode(input) {
-                   if (input == null) return;
-                   if ((input.value.toString().length != 3) || isNaN(Number(input.value))) {
-                       alert("Your card number must consist of only numbers and must be 16 digits.");
-                       input.value = null;
-                       return;
-                   }
-                   if (Number(input.value) < 0) {
-                       input.value = null;
-                   }
-               }
-           </script>
-       </div>
-    </div>
+    
         <h2 id="event_product_header">Package Information</h2>
         <div class="flex-container">
         <div class="label-input-container tworow" id="lengthDiv" hidden>
@@ -234,6 +174,69 @@
         </script>
     </div>
     <div>
+        
+        <h2>Payment Information</h2>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Card Type</label>
+            <select class="select" required>
+                <option value="">Select</option>
+                <option value="debit">Debit</option>
+                <option value="credit">Credit</option>
+            </select>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Card Issuer</label>
+            <select class="select" required>
+                <option value="">Select</option>
+                <option value="visa">Visa</option>
+                <option value="discover">Discover</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="amex">American Express (Amex)</option>
+            </select>
+        </div>
+    </div>
+    <div class="flex-container">
+       <div class="label-input-container threerow">
+           <label class="RegularWhiteText">Card Number</label>
+           <input name="credit card" type="text" placeholder="16 Digits Long" onchange="verifyCard(this);" required>
+           <script>
+               function verifyCard(input) {
+                   if (input == null) return;
+                   if ((input.value.toString().length != 16) || (isNaN(Number(input.value)))) {
+                       alert("Your card number must consist of only numbers and must be 16 digits.");
+                       input.value = null;
+                       return;
+                   }
+                   if (Number(input.value) < 0) {
+                       input.value = null;
+                   }
+               }
+           </script>
+       </div>  
+       <div class="label-input-container threerow">
+           <label class="RegularWhiteText">Expiration Date</label>
+           <input class="" name="Expiration" type="text" placeholder="mm/yy" required>
+       </div> 
+       <div class="label-input-container threerow">
+           <label class="RegularWhiteText">Three Digit Security Code (CVC/CVV)</label>
+           <input class="" name="CCV" type="number" placeholder="Found on the back of your card." onchange="verifyCode(this);" required>
+           <script>
+               function verifyCode(input) {
+                   if (input == null) return;
+                   if ((input.value.toString().length != 3) || isNaN(Number(input.value))) {
+                       alert("Your card number must consist of only numbers and must be 16 digits.");
+                       input.value = null;
+                       return;
+                   }
+                   if (Number(input.value) < 0) {
+                       input.value = null;
+                   }
+               }
+           </script>
+       </div>
+    </div>
+        
         <h2>Disclaimers & Terms/Conditions</h2>
         <label class="RegularWhiteText">I agree to all of the <a href="" class="hyperlink" target="_blank">terms and conditions</a>.
         <input type="checkbox" required>
