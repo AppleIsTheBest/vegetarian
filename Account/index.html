@@ -1,2 +1,103 @@
+<!doctype html>
 <html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+  <link rel="stylesheet" type="text/css" href="../index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <script src="../jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="../index.js"></script>
+    <script src="index.js"></script>
+  <title>Purchase</title>
+
+    <style>
+        .date{
+            margin-right: 350;
+        }
+        .selectMenu{
+            margin-right: 350;
+        }   
+        .RegularWhiteText{
+            color: white;
+        }
+      body {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+    a:hover {
+
+      color: grey;
+
+    }
+
+    .button {
+
+      color: #000000;
+
+    }  
+        
+    .hyperlink {
+      color: #0099ff;
+    }
+    .hyperlink:visited {
+      color: #0099ff;
+    }
+    </style>
+</head>
+<body>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <div id="titlename"><p id="menu-button" style="font-size: 20px;">ExtraPlanetary Explorations</p></div>
+   <nav>
+   <a class="navlink" href="../">Home</a>
+    <a class="navlink" margin-left="15" href="../products/">Tour Packages</a>
+    <a class="navlink" href="../purchase/">Book</a>
+    <a class="navlink" href="../contact/">Contact Us</a>
+    <a class="navlink" href="../resources/">Support</a>
+    <a class="navlink" href="../resources/Feedback.html">Feedback</a>
+  </nav>
+      <h1 class="tc">Register</h1>
+    <form>
+        <!-- Currently not working. 405 Error. Not sure how to fix. -->
+    <article class="c form">
+    <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        var param = getUrlVars()["product"];
+        var product = document.getElementById("test").value
+        product = param;
+        if (product == "Select"){
+            alert("Please select a product.")
+        }    
+    </script>
+    </div>
+    <h2>Your Information</h2>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">First Name</label>
+            <input class="" name="First name" type="text" id="require" required><br>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Last Name</label>
+            <input class="" name="Last name" type="text" id="require" required>
+        </div>
+    </div>
+    </article>
+</form>
+<footer>
+  <p style="font-size: 12px;">*The custom message is subject to review. Extraplanetary Exploration Corp. reserves the right to not include the message at our discretion.</p>
+  <p>Copyright © 2022 Extraplanetary Exploration Corp. All rights reserved</p>
+  <p>PLEASE NOTE: If you are using a mobile device to view this web page, please turn off portrait orientation lock, and turn the device on its side.</p>
+</footer>
+</body>
 </html>
