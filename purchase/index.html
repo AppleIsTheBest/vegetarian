@@ -225,7 +225,7 @@
                function verifyCode(input) {
                    if (input == null) return;
                    if ((input.value.toString().length != 3) || isNaN(Number(input.value))) {
-                       alert("Your card number must consist of only numbers and must be 16 digits.");
+                       alert("Your CVV must contain only numbers and must be 3 digits longs.");
                        input.value = null;
                        return;
                    }
