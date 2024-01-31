@@ -138,9 +138,17 @@
                             if (this.status == 200) {
                                 console.log(this.responseText);
                                 var data = JSON.parse(this.responseText);
-                                var city = data["results"][0]["address_components"][1]["long_name"];
-                                var state = data["results"][0]["address_components"][2]["long_name"];
-                                console.log(`City: ${city}, State: ${state}`);
+                                var components = data["results"][0]["address_components"];
+                                var city = "";
+                                var state = "";
+                                for (component of components) {
+                                    if (component["types"][0] == "locality") {
+                                        city = component["long_name"];
+                                    }
+                                    else if (component["types"][0] == "administration_level_1") {
+                                        state = component["long_name"];
+                                    }
+                                }
                                 document.getElementById("houseLocationField").value = `${city}, ${state}`;
                                 document.getElementById("houseLocationField").hidden = false;
                                 document.getElementById("houseLocation").hidden = false;
@@ -153,8 +161,8 @@
                 }
             </script>
         </div>
-        <div class="label-input-container tworow">
-            <label class="RegularWhiteText" id="houseLocation" hidden>Location</label>
+        <div class="label-input-container tworow" id="houseLocation" hidden>
+            <label class="RegularWhiteText" hidden>Location</label>
             <input name="zipCode" type="text" placeholder="" id="houseLocationField" hidden disabled required>
         </div>
     </div>
