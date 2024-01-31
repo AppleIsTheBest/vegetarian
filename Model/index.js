@@ -28,13 +28,13 @@ function calculateBenefits() {
       if (stateCode == "CA") {
         document.getElementById("benefitLabel").innerHTML = "Depending on the type of home, consult the appropriate program: single family home - SFNH California, manufactured home - MH v2, or multi-family home MFNC California.";
       }
-      else if (stateCode == "FL") {
+      else if (stateCode == "FL" && homeYear <= 2024) {
         document.getElementById("benefitLabel").innerHTML = "Depending on the type of home, consult the appropriate program: single family home - SFNH Florida or SFNH National, manufactured home - MH v2, or multi-family home MFNC National.";
       }
-      else if (stateCode == "HI") {
+      else if (stateCode == "HI" && homeYear <= 2026) {
         document.getElementById("benefitLabel").innerHTML = "Depending on the type of home, consult the appropriate program: single family home - SFNH Pacific, manufactured home - MH v2, or multi-family home MFNC National.";
       }
-      else if (stateCode == "OR" || stateCode == "WA") {
+      else if (stateCode == "OR" && homeYear <= 2026 || stateCode == "WA" && homeYear <= 2026) {
         document.getElementById("benefitLabel").innerHTML = "Depending on the type of home, consult the appropriate program: single family home - SFNH Oregon and Washington or SFNH National, manufactured home - MH v2, or multi-family home MFNC Oregon and Washington or MFNC National.";
       }
       else if (homeYear < 2023) {
