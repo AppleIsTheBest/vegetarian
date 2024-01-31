@@ -198,7 +198,7 @@
     </div>
             <label class="RegularWhiteText">Which program?</label>
     <div class="flex-container">
-        <select id="packageSelection" class="selectMenu" onchange="handleSelectionChange(this)" required>
+        <select id="programSelection" class="selectMenu" onchange="" required>
             <option value="">Select</option>
             <option value="es-b">ENERGYSTAR - Home Builders</option>
             <option value="es-h">ENERGYSTAR - Home Owner</option>
@@ -211,18 +211,18 @@
         <label class="RegularWhiteText">I agree to all of the <a href="" class="hyperlink" target="_blank">terms and conditions</a>.
         <input type="checkbox" required>
     </div>
-    <script>
-        function calculateTotal() {
-            if (document.getElementsByName("quantityInput")[0].value != null && document.getElementById("packageSelection").value != null && document.getElementById("journeyLength").value != null) {
-                var quantity = document.getElementsByName("quantityInput")[0].value;
-                var priceDictionary = {"stb": 500000, "stp": 750000, "seb": 1500000, "sep": 2500000};
-                var lengthOfStay = document.getElementById("journeyLength").value;
-                document.getElementById("subtotal").innerText = "Subtotal: $" + priceDictionary[document.getElementById("packageSelection").value] * quantity * lengthOfStay + ".00";
-            }
-        }
-    </script>
     </div>
-    <button class="button" action="alert('Thank you for signing up! We will reach out with more details about trainings and then we will assist you in finishing your booking.'); window.location.href = '/products';" style="font-family: Quicksand;">Register Now</button>
+            <br>
+            <br>
+    <button class="button" action="startCalculation();" style="font-family: Quicksand;">Register Now</button>
+            <script>
+                function startCalculation() {
+                    let program = document.getElementById("programSelection").value;
+                    let year = document.getElementByName("homeYear").value;
+                    let state = document.getElementByName("stateID").value;
+                    calculateBenefits(program, state, year);
+                }
+            </script>
     </article>
 </form>
 <footer>
