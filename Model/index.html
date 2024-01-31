@@ -92,7 +92,7 @@
                         input.value == null;
                         alert('You must enter a valid home value.');
                     }
-                    else if (Number(input.value.length) < 100000) {
+                    else if (Number(input.value) < 100000) {
                         input.value == null;
                         alert('You must enter a valid home value.');
                     }
@@ -112,7 +112,7 @@
                         input.value == null;
                         alert('You must enter a valid year.');
                     }
-                    else if (Number(input.value.length) < 1924 || Number(input.value.length) > 2024) {
+                    else if (Number(input.value) < 1924) {
                         input.value == null;
                         alert('You must enter a valid year.');
                     }
