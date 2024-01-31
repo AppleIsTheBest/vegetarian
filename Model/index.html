@@ -136,11 +136,10 @@
                         var request = new XMLHttpRequest();
                         request.onreadystatechange = function() {
                             if (this.status == 200) {
-                                // var data = JSON.parse(this.responseText);
-                                console.log(this.responseText);
-                                // var city = data["results"]["address_components"][2]["long_name"];
-                                // var state = data["results"]["address_components"][4]["long_name"];
-                                // console.log(`City: ${city}, State: ${state}`);
+                                var data = JSON.parse(this.responseText);
+                                var city = data["results"]["address_components"][2]["long_name"];
+                                var state = data["results"]["address_components"][4]["long_name"];
+                                console.log(`City: ${city}, State: ${state}`);
                             }
                         }
                         var apiKey = "AIzaSyB_rBdOua5FME2Sa-5Ur_7Oyufgcqji_BY";
@@ -149,6 +148,9 @@
                     }
                 }
             </script>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText" id="houseLocation" hidden>Location: City, State</label>
         </div>
     </div>
     
