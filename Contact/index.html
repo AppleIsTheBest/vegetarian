@@ -128,18 +128,18 @@
     <script>
         function checkAge(input) {
             var age = input.value;
-            if (age < 13) alert("You must be 13 or older to contact us in order to comply with COPPA.");
+            if (age < 13) alert("You must be 13 or older to contact us in order to comply with U.S. law.");
             if (age < 13) input.value = null;
         }
     </script>
     <h2>What's this about?</h2>
-    <p>If you have feedback, please submit it through the <a href="../resources/Feedback.html">feedback page</a>.</p>
+    <p>If you have feedback, please submit it through the <a href="../Support/Feedback.html">feedback page</a>.</p>
     <div class="flex-container">
         <select id="escape-room-select" class="selectMenu" required>
             <option value="">Select</option>
             <option value="tech_support" data-hours="1">Technical Support</option>
-            <option value="special_purchases" data-hours="0.5">Investor Support</option>
-            <option value="questions" data-hours="0.5">Questions</option>
+            <option value="solution_questions" data-hours="0.5">Solution Questions</option>
+            <option value="solution_questions" data-hours="0.5">Benefit Questions</option>
         </select>
     </div>
     </div>
@@ -147,7 +147,7 @@
         <div class="flex-container">
         <div class="label-input-container tworow">
            <textarea></textarea>
-           <p>Please do not include sensitive information such as passwords.</p>
+           <p>Please do not include sensitive information such as account numbers and passwords.</p>
         </div>
     </div>
     <div>
