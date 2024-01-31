@@ -152,7 +152,7 @@
     
         <h2 id="event_product_header">Energy Information</h2>
         <div class="flex-container">
-        <div class="label-input-container tworow" id="lengthDiv" hidden>
+        <div class="label-input-container tworow" id="lengthDiv">
             <label class="RegularWhiteText" id="customMessage">Monthly Average Energy Usage (kWh)</label>
             <input id="energyUsage" type="text" onchange="verifyEnergyUsage(this);" placeholder="Enter value in kWh." required>
             <script>
@@ -177,109 +177,21 @@
             </script><br>
         </div>
     </div>
-            <label class="RegularWhiteText">Which package?</label>
+            <label class="RegularWhiteText">Which program?</label>
     <div class="flex-container">
         <select id="packageSelection" class="selectMenu" onchange="handleSelectionChange(this)" required>
             <option value="">Select</option>
-            <option value="stb">Space Traveler</option>
-            <option value="stp">Space Traveler Plus</option>
-            <option value="seb">Space Explorer</option>
-            <option value="sep">Space Explorer Plus</option>
+            <option value="1">Program 1</option>
+            <option value="2">Program 2</option>
+            <option value="3">Program 3</option>
+            <option value="4">Program 4</option>
         </select>
-        <script>
-            function handleSelectionChange(input) {
-                console.log("called");
-                if (input.value == "stb" || input.value == "stp") {
-                    document.getElementById("journeyLength").disabled = false
-                    document.getElementById("journeyLength").placeholder = "Package permits up to 30 days"
-                    document.getElementById("lengthDiv").hidden = false
-                    var maxLengthApplicable = true;
-                }
-                else if (input.value == "seb" || input.value == "sep") {
-                    document.getElementById("journeyLength").disabled = false
-                    document.getElementById("journeyLength").placeholder = "Enter the length of your stay"
-                    document.getElementById("lengthDiv").hidden = false
-                    var maxLengthApplicable = false;
-                }
-                else {
-                    document.getElementById("journeyLength").disabled = true
-                    document.getElementById("journeyLength").value = ""
-                    document.getElementById("journeyLength").placeholder = ""
-                    var maxLengthApplicable = true;
-                }
-                calculateTotal();
-            }
-        </script>
-    </div>
-    <div>
-        
-        <h2>Payment Information</h2>
-    <div class="flex-container">
-        <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Card Type</label>
-            <select class="select" required>
-                <option value="">Select</option>
-                <option value="debit">Debit</option>
-                <option value="credit">Credit</option>
-            </select>
-        </div>
-        <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Card Issuer</label>
-            <select class="select" required>
-                <option value="">Select</option>
-                <option value="visa">Visa</option>
-                <option value="discover">Discover</option>
-                <option value="mastercard">Mastercard</option>
-                <option value="amex">American Express (Amex)</option>
-            </select>
-        </div>
-    </div>
-    <div class="flex-container">
-       <div class="label-input-container threerow">
-           <label class="RegularWhiteText">Card Number</label>
-           <input name="credit card" type="text" placeholder="16 Digits Long" onchange="verifyCard(this);" required>
-           <script>
-               function verifyCard(input) {
-                   if (input == null) return;
-                   if ((input.value.toString().length != 16) || (isNaN(Number(input.value)))) {
-                       alert("Your card number must consist of only numbers and must be 16 digits.");
-                       input.value = null;
-                       return;
-                   }
-                   if (Number(input.value) < 0) {
-                       input.value = null;
-                   }
-               }
-           </script>
-       </div>  
-       <div class="label-input-container threerow">
-           <label class="RegularWhiteText">Expiration Date</label>
-           <input class="" name="Expiration" type="text" placeholder="mm/yy" required>
-       </div> 
-       <div class="label-input-container threerow">
-           <label class="RegularWhiteText">Three Digit Security Code (CVC/CVV)</label>
-           <input class="" name="CCV" type="number" placeholder="Found on the back of your card." onchange="verifyCode(this);" required>
-           <script>
-               function verifyCode(input) {
-                   if (input == null) return;
-                   if ((input.value.toString().length != 3) || isNaN(Number(input.value))) {
-                       alert("Your CVV must contain only numbers and must be 3 digits longs.");
-                       input.value = null;
-                       return;
-                   }
-                   if (Number(input.value) < 0) {
-                       input.value = null;
-                   }
-               }
-           </script>
-       </div>
     </div>
         
         <h2>Disclaimers & Terms/Conditions</h2>
         <label class="RegularWhiteText">I agree to all of the <a href="" class="hyperlink" target="_blank">terms and conditions</a>.
         <input type="checkbox" required>
     </div>
-    <p id="subtotal">Subtotal: Please select an package and enter the number of passengers and days.</p>
     <script>
         function calculateTotal() {
             if (document.getElementsByName("quantityInput")[0].value != null && document.getElementById("packageSelection").value != null && document.getElementById("journeyLength").value != null) {
