@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+      #map {
+        height: 500px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+      body {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+      a:link {
+
+      color: #0099ff;
+
+    }
+
+    a:hover {
+
+      color: grey;
+
+    }
+
+    .button {
+
+      color: #0099ff;
+
+    }  
+
+    a.navlogo:hover {
+
+      background-color: #0099ff;
+
+    }
+
+    a:visited {
+
+      color: #0099ff;
+
+    }
+
+    a.navlink:visited {
+
+      color: white;
+
+    }
+      .hyperlink {
+      color: #0099ff;
+    }
+    .hyperlink:visited {
+      color: #0099ff;
+    }
+    .RegularWhiteText{
+        color: white;
+    }
+    </style>
+   <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../index.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <script src="../jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="../index.js"></script>
+  <title>Contact Us</title>
+</head>
+<body>
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<div id="titlename"><p id="menu-button" style="font-size: 20px;">ExtraPlanetary Exploration s</p></div>
+ <nav>
+   <a class="navlink" href="">Home</a>
+    <a class="navlink" margin-left="15" href="products/">Green Solutions</a>
+    <a class="navlink" href="purchase/">Model</a>
+    <a class="navlink" href="contact/">Contact Us</a>
+    <a class="navlink" href="resources/">Support</a>
+    <a class="navlink" href="resources/Feedback.html">Feedback</a>
+  </nav>
+
+
+    <h1 class="tc">Contact Us</h1>
+   <form>
+        <!-- Currently not working. 405 Error. Not sure how to fix. -->
+    <article class="c form">
+    <p>Would you rather call us? Phone Number: <a href="tel://#">+1 (123) 456-7890</a></p>
+    <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        var param = getUrlVars()["product"];
+        var product = document.getElementById("test").value
+        product = param;
+        if (product == "Select"){
+            alert("Please select a product.")
+        }    
+    </script>
+    </div>
+    <h2>Your Information</h2>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">First Name</label>
+            <input class="" name="First name" type="text" id="require" required><br>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Last Name</label>
+            <input class="" name="Last name" type="text" id="require" required>
+        </div>
+    </div>
+    <h2>Contact Information</h2>
+    <div class="flex-container">
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">E-Mail Address</label>
+            <input name="e-mail address" type="email" placeholder="Ex: example@example.com" required>
+        </div>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Phone Number</label>
+            <input name="phone number" type="text" placeholder="Ex: 1234567890 or (123)456-7890" required>
+        </div>
+    </div>
+        <label class="RegularWhiteText">Age</label>
+    <input type="number" name="age" class="tworow" onchange="checkAge(this);" required>
+    <script>
+        function checkAge(input) {
+            var age = input.value;
+            if (age < 13) alert("You must be 13 or older to contact us in order to comply with COPPA.");
+            if (age < 13) input.value = null;
+        }
+    </script>
+    <h2>What's this about?</h2>
+    <p>If you have feedback, please submit it through the <a href="../resources/Feedback.html">feedback page</a>.</p>
+    <div class="flex-container">
+        <select id="escape-room-select" class="selectMenu" required>
+            <option value="">Select</option>
+            <option value="tech_support" data-hours="1">Technical Support</option>
+            <option value="special_purchases" data-hours="0.5">Investor Support</option>
+            <option value="questions" data-hours="0.5">Questions</option>
+        </select>
+    </div>
+    </div>
+        <h2>Tell Us The Details</h2>
+        <div class="flex-container">
+        <div class="label-input-container tworow">
+           <textarea></textarea>
+           <p>Please do not include sensitive information such as passwords.</p>
+        </div>
+    </div>
+    <div>
+        <h2>Disclaimers & Terms/Conditions</h2>
+        <label class="RegularWhiteText">I agree to all of the <a href="" class="hyperlink" target="_blank">terms and conditions</a>.
+        <input type="checkbox" required>
+    </div>
+    <button class="button mt32" action="alert('Thank you for contacting us. We'll get back to you soon!');">Submit</button>
+    </article>
+</form>
+   <footer>
+  <p>Copyright © 2022 ExtraPlanetary Explorations Inc. All rights reserved</p>
+  <p>PLEASE NOTE: If you are using a mobile device to view this web page, please turn off portrait orientation lock, and turn the device on its side.</p>
+    </footer>
+  </body>  
+</html>
