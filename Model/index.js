@@ -23,7 +23,7 @@ $(function(){
   });
 });
 
-function calculateBenefits() {
+function calculateBenefits(programValue, stateCode, homeYear) {
     if (programValue == "es-b") {
       if (stateCode == "CA") {
         document.getElementById("benefitLabel").innerHTML = "Depending on the type of home, consult the appropriate program: single family home - SFNH California, manufactured home - MH v2, or multi-family home MFNC California.";
