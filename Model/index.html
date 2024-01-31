@@ -136,10 +136,14 @@
                         var request = new XMLHttpRequest();
                         request.onreadystatechange = function() {
                             if (this.status == 200) {
+                                console.log(this.responseText);
                                 var data = JSON.parse(this.responseText);
                                 var city = data["results"]["address_components"][2]["long_name"];
                                 var state = data["results"]["address_components"][4]["long_name"];
                                 console.log(`City: ${city}, State: ${state}`);
+                                document.getElementById("houseLocationField").value = `${city}, ${state}`;
+                                document.getElementById("houseLocationField").hidden = false;
+                                document.getElementById("houseLocation").hidden = false;
                             }
                         }
                         var apiKey = "AIzaSyB_rBdOua5FME2Sa-5Ur_7Oyufgcqji_BY";
@@ -150,7 +154,8 @@
             </script>
         </div>
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText" id="houseLocation" hidden>Location: City, State</label>
+            <label class="RegularWhiteText" id="houseLocation" hidden>Location</label>
+            <input name="zipCode" type="text" placeholder="" id="houseLocationField" hidden disabled required>
         </div>
     </div>
     
