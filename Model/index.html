@@ -88,7 +88,7 @@
             <input class="" name="homeValue" type="number" id="require" onchange="verifyValue(this);" required><br>
             <script>
                 function verifyValue(input) {
-                    if (Number.isNaN(Number(input.value))) {
+                    if (isNaN(Number(input.value))) {
                         input.value == null;
                         alert('You must enter a valid home value.');
                     }
@@ -104,7 +104,7 @@
             <input class="" name="homeYear" type="text" id="require" onchange="verifyYear(this);" required>
             <script>
                 function verifyYear(input) {
-                    if (Number.isNaN(Number(input.value))) {
+                    if (isNaN(Number(input.value))) {
                         input.value == null;
                         alert('You must enter a valid year.');
                     }
@@ -127,7 +127,7 @@
             <input name="zipCode" type="text" placeholder="5 Digit ZIP Code" onchange="obtainLocation(this);" required>
             <script>
                 function obtainLocation(input) {
-                    if (Number.isNaN(Number(input.value)) || input.value.length > 5) {
+                    if (isNaN(Number(input.value)) || input.value.length > 5) {
                         input.value = null;
                         alert('Enter a valid U.S. ZIP code.')
                     }
@@ -157,7 +157,7 @@
             <input id="energyUsage" type="text" onchange="verifyEnergyUsage(this);" placeholder="Enter value in kWh." required>
             <script>
                 function verifyEnergyUsage(input) {
-                    if (Number.isNaN(Number(input.value))) {
+                    if (isNaN(Number(input.value))) {
                         alert('Enter a valid energy usage.');
                         input.value = null;
                     }
@@ -169,7 +169,7 @@
             <input class="" type="number" id="require" onchange="verifyEnergyCost(this);" placeholder="Enter value in USD." name="energyCost" required>
             <script>
                 function verifyEnergyCost(input) {
-                    if (Number.isNaN(Number(input.value))) {
+                    if (isNaN(Number(input.value))) {
                         alert('Enter a valid energy usage.');
                         input.value = null;
                     }
