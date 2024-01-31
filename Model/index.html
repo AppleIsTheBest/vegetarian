@@ -147,6 +147,7 @@
                                     }
                                     else if (component["types"][0] == "administrative_area_level_1") {
                                         state = component["long_name"];
+                                        document.getElementById("stateID").value = component["short_name"];
                                     }
                                 }
                                 document.getElementById("houseLocationField").value = `${city}, ${state}`;
@@ -164,6 +165,7 @@
         <div class="label-input-container tworow" id="houseLocation" hidden>
             <label class="RegularWhiteText" hidden>Location</label>
             <input name="zipCode" type="text" placeholder="" id="houseLocationField" hidden disabled required>
+            <input name="zipCode" type="text" placeholder="" id="stateID" hidden disabled>
         </div>
     </div>
     
