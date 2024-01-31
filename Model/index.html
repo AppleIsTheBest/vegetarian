@@ -132,6 +132,7 @@
                         alert('Enter a valid U.S. ZIP code.')
                     }
                     else if (input.value.length == 5) {
+                        console.log("Check passed");
                         var request = XHRHttpRequest();
                         request.onreadystatechange = function() {
                             if (this.status == 200) {
