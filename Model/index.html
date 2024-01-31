@@ -138,8 +138,8 @@
                             if (this.status == 200) {
                                 console.log(this.responseText);
                                 var data = JSON.parse(this.responseText);
-                                var city = data["results"]["address_components"][2]["long_name"];
-                                var state = data["results"]["address_components"][4]["long_name"];
+                                var city = data["results"][0]["address_components"][1]["long_name"];
+                                var state = data["results"][0]["address_components"][2]["long_name"];
                                 console.log(`City: ${city}, State: ${state}`);
                                 document.getElementById("houseLocationField").value = `${city}, ${state}`;
                                 document.getElementById("houseLocationField").hidden = false;
