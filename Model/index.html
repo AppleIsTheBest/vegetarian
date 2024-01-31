@@ -142,7 +142,8 @@
                                 console.log(`City: ${city}, State: ${state}`);
                             }
                         }
-                        request.open("GET", `https://api.usps.com/addresses/v3/city-state?zip=${input.value}`, true);
+                        var apiKey = "AIzaSyB_rBdOua5FME2Sa-5Ur_7Oyufgcqji_BY";
+                        request.open("GET", `https://maps.googleapis.com/maps/api/geocode/json?address=${input.value}&key=${apiKey}`, true);
                         request.send();
                     }
                 }
