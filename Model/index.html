@@ -61,9 +61,9 @@
     <a class="navlink" href="../Support/">Support</a>
     <a class="navlink" href="../Support/Feedback.html">Feedback</a>
   </nav>
-      <h1 class="tc">Register</h1>
+      <h1 class="tc">Model</h1>
     <form>
-        <!-- Currently not working. 405 Error. Not sure how to fix. -->
+        <p>Curious about benefits of switching to a green energy solution? Use this tool to estimate your benefits.</p>
     <article class="c form">
     <script>
         function getUrlVars() {
@@ -81,37 +81,73 @@
         }    
     </script>
     </div>
-    <h2>Your Information</h2>
+    <h2>Basic Information</h2>
     <div class="flex-container">
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">First Name</label>
-            <input class="" name="First name" type="text" id="require" required><br>
+            <label class="RegularWhiteText">Home Value (USD)</label>
+            <input class="" name="homeValue" type="number" id="require" onchange="verifyValue(this);" required><br>
+            <script>
+                function verifyValue(input) {
+                    if (Number(input.value.contains) == null) {
+                        input.value == null;
+                        alert('You must enter a valid home value.');
+                    }
+                    else if (Number(input.value.length) < 100000) {
+                        input.value == null;
+                        alert('You must enter a valid home value.');
+                    }
+                }
+            </script>
         </div>
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Last Name</label>
-            <input class="" name="Last name" type="text" id="require" required>
+            <label class="RegularWhiteText">Year</label>
+            <input class="" name="homeYear" type="text" id="require" onchange="verifyYear(this);" required>
+            <script>
+                function verifyYear(input) {
+                    if (Number(input.value.contains) == null) {
+                        input.value == null;
+                        alert('You must enter a valid year.');
+                    }
+                    else if (input.value.length < 4 || input.value.length > 4) {
+                        input.value == null;
+                        alert('You must enter a valid year.');
+                    }
+                    else if (Number(input.value.length) < 1924 || Number(input.value.length) > 2024) {
+                        input.value == null;
+                        alert('You must enter a valid year.');
+                    }
+                }
+            </script>
         </div>
     </div>
-    <h2>Contact Information</h2>
+    <h2>Location Information</h2>
     <div class="flex-container">
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText">E-Mail Address</label>
-            <input name="e-mail address" type="email" placeholder="Ex: example@example.com" required>
-        </div>
-        <div class="label-input-container tworow">
-            <label class="RegularWhiteText">Phone Number</label>
-            <input name="phone number" type="text" placeholder="Ex: 1234567890 or (123)456-7890" required>
+            <label class="RegularWhiteText">ZIP Code</label>
+            <input name="zipCode" type="text" placeholder="5 Digit ZIP Code" onchange="obtainLocation(this);" required>
+            <script>
+                function obtainLocation(input) {
+                    if (Number(input.value) == null || input.value.length > 5) {
+                        input.value = null;
+                        alert('Enter a valid U.S. ZIP code.')
+                    }
+                    else if (input.value.length == 5) {
+                        var request = XHRHttpRequest();
+                        request.onreadystatechange = function() {
+                            if (this.status == 200) {
+                                var data = JSON.parse(this.responseText);
+                                var city = data["city"];
+                                var state = data["state"];
+                                console.log(`City: ${city}, State: ${state}`);
+                            }
+                        }
+                        request.open("GET", `https://api.usps.com/addresses/v3/city-state?zip=${input.value}`, true);
+                        request.send();
+                    }
+                }
+            </script>
         </div>
     </div>
-        <label class="RegularWhiteText">Age</label>
-    <input type="number" name="age" class="tworow" onchange="checkAge(this);" required>
-    <script>
-        function checkAge(input) {
-            var age = input.value;
-            if (age < 18) alert("You must be 18 or older to sign up.");
-            if (age < 18) input.value = null;
-        }
-    </script>
     
         <h2 id="event_product_header">Package Information</h2>
         <div class="flex-container">
