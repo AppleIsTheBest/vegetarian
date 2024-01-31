@@ -150,28 +150,29 @@
         </div>
     </div>
     
-        <h2 id="event_product_header">Package Information</h2>
+        <h2 id="event_product_header">Energy Information</h2>
         <div class="flex-container">
         <div class="label-input-container tworow" id="lengthDiv" hidden>
-            <label class="RegularWhiteText" id="customMessage">Length of Journey (in days)</label>
-            <input id="journeyLength" type="number" onchange="handleLengthChange(this);" placeholder=" " disabled required>
+            <label class="RegularWhiteText" id="customMessage">Monthly Average Energy Usage (kWh)</label>
+            <input id="energyUsage" type="text" onchange="verifyEnergyUsage(this);" placeholder="Enter value in kWh." required>
             <script>
-                function handleLengthChange(input) {
-                    console.log("Triggered Length Change");
-                    if (maxLengthApplicable == true) input.value = input.value <= 30 ? input.value : 30
-                    input.value = input.value >= 1 ? input.value : 1
-                    calculateTotal();
+                function verifyEnergyUsage(input) {
+                    if (Number(input.value) == null) {
+                        alert('Enter a valid energy usage.');
+                        input.value = null;
+                    }
                 }
             </script>
         </div>
         <div class="label-input-container tworow">
-            <label class="RegularWhiteText" id="quantity">How many passengers should be on this reservation?</label>
-            <input class="" type="number" id="require" onchange="handleChange(this);" placeholder="Up to 10 per reservation" name="quantityInput" required>
+            <label class="RegularWhiteText" id="quantity">Monthly Average Energy Cost (USD)</label>
+            <input class="" type="number" id="require" onchange="verifyEnergyCost(this);" placeholder="Enter value in USD." name="energyCost" required>
             <script>
-                function handleChange(input) {
-                    if (input.value < 1) input.value = 1;
-                    if (input.value > 10) input.value = 10;
-                    calculateTotal();
+                function verifyEnergyCost(input) {
+                    if (Number(input.value) == null) {
+                        alert('Enter a valid energy usage.');
+                        input.value = null;
+                    }
                 }
             </script><br>
         </div>
