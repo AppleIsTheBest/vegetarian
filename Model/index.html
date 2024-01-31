@@ -133,7 +133,7 @@
                     }
                     else if (input.value.length == 5) {
                         console.log("Check passed");
-                        var request = new XHRHttpRequest();
+                        var request = new XMLHttpRequest();
                         request.onreadystatechange = function() {
                             if (this.status == 200) {
                                 var data = JSON.parse(this.responseText);
