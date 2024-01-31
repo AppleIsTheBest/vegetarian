@@ -62,7 +62,10 @@ function calculateBenefits() {
         }
       }
       else {
-        document.getElementById("benefitLabel").innerText = "Tax rebate information for your home has not been released by ENERGYSTAR yet.";
+        document.getElementById("benefitLabel").innerHTML = "Tax rebate information for your home has not been released by ENERGYSTAR yet.";
       }
+    }
+    else if if (programValue == "es-h") {
+      document.getElementById("benefitLabel").innerHTML = "ENERGYSTAR states that between the January 1, 2023 and December 31, 2032, you are permitted to claim up to 30% of $150 of your costs as a tax credit."
     }
 }
