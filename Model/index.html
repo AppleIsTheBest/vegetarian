@@ -209,14 +209,16 @@
             function verifyProgramSelection(input) {
                 if (input.value == "frce") {
                     document.getElementById("installationCostsContainer").hidden = false;
+                    document.getElementById("installationCostsSecondaryContainer").hidden = false;
+                    document.getElementById("installationCostsLabel").hidden = false;
                     document.getElementById("installationCosts").required = true;
                 }
             }
         </script>
     </div>
-        <h2>Further Information</h2>
+        <h2 id="installationCostsLabel">Further Information</h2>
         <div class="flex-container" id="installationCostsContainer" hidden>
-        <div class="label-input-container tworow">
+        <div class="label-input-container tworow" id="installationCostsSecondaryContainer" hidden>
             <label class="RegularWhiteText">Device Installation Costs</label>
             <input class="" id="installationCosts" type="number" onchange="verifyCost(this);" placeholder="Enter your costs for clean energy property including solar/wind energy and batteries here."><br>
             <script>
