@@ -198,13 +198,40 @@
     </div>
             <label class="RegularWhiteText">Which program?</label>
     <div class="flex-container">
-        <select id="programSelection" class="selectMenu" onchange="" required>
+        <select id="programSelection" class="selectMenu" onchange="verifyProgramSelection(this);" required>
             <option value="">Select</option>
             <option value="es-b">ENERGYSTAR - Home Builders</option>
             <option value="es-h">ENERGYSTAR - Home Owner</option>
             <option value="ev">EV Tax Rebate</option>
-            <option value="4">Program 4</option>
+            <option value="frce">Residential Clean Energy Tax Credit</option>
         </select>
+        <script>
+            function verifyProgramSelection(input) {
+                if (input.value == "frce") {
+                    document.getElementById("installationCostsContainer").hidden = false;
+                    document.getElementById("installationCosts").required = true;
+                }
+            }
+        </script>
+    <h2>Further Information</h2>
+    </div>
+        <div class="flex-container" id="installationCostsContainer" hidden>
+        <div class="label-input-container tworow">
+            <label class="RegularWhiteText">Device Installation Costs</label>
+            <input class="" id="installationCosts" type="number" onchange="verifyCost(this);" placeholder="Enter your costs for clean energy property including solar/wind energy and batteries here."><br>
+            <script>
+                function verifyCost(input) {
+                    if (isNaN(Number(input.value))) {
+                        input.value == null;
+                        alert('You must enter a valid cost in USD.');
+                    }
+                    else if (Number(input.value) < 100000) {
+                        input.value == null;
+                        alert('You must enter a valid cost in USD.');
+                    }
+                }
+            </script>
+        </div>
     </div>
         
         <h2>Disclaimers & Terms/Conditions</h2>
